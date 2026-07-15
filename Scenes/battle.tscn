@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dqfxuxnm6tnyi"]
+
+[ext_resource type="Script" uid="uid://bi4ojpd38sa05" path="res://Scripts/battle.gd" id="1_pd5xk"]
+[ext_resource type="Script" uid="uid://cf5hxr8cto3e" path="res://Scripts/event_queue.gd" id="2_f6xt6"]
+[ext_resource type="Texture2D" uid="uid://car7ojtxqhst6" path="res://Art/abstract_background.jpg" id="3_lrv64"]
+[ext_resource type="Script" uid="uid://640wg2efcbqp" path="res://Scripts/menu.gd" id="3_ww2ai"]
+[ext_resource type="PackedScene" uid="uid://ciybf48kkst0x" path="res://Scenes/player_windows.tscn" id="4_lrv64"]
+[ext_resource type="PackedScene" uid="uid://yeedyoklk0gp" path="res://Scenes/enemy.tscn" id="5_qeyqd"]
+[ext_resource type="PackedScene" uid="uid://duoyklvanun7a" path="res://assets/Textbox/textbox.tscn" id="6_f6xt6"]
+
+[node name="Battle" type="Control" unique_id=1882941068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pd5xk")
+
+[node name="EventQueue" type="Node" parent="." unique_id=1376069727]
+script = ExtResource("2_f6xt6")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1548973808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=1603589922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lrv64")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Letterboxes" type="Control" parent="." unique_id=1208648711]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="LetterboxTop" type="ColorRect" parent="Letterboxes" unique_id=651883574]
+custom_minimum_size = Vector2(320, 16)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 16.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LetterboxBottom" type="ColorRect" parent="Letterboxes" unique_id=2114326282]
+custom_minimum_size = Vector2(320, 16)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -16.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1462075321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="PanelContainer" parent="MarginContainer" unique_id=1144736083 node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("3_ww2ai")
+buttons_container = NodePath("VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Options" unique_id=1986561074]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=63019249]
+layout_mode = 2
+text = "Fight"
+
+[node name="Button2" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=421961958]
+layout_mode = 2
+text = "Item"
+
+[node name="Button3" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=684384681]
+layout_mode = 2
+text = "Magic"
+
+[node name="Button4" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=1090937003]
+layout_mode = 2
+text = "Flee"
+
+[node name="PlayerWindows" parent="MarginContainer" unique_id=2079563648 instance=ExtResource("4_lrv64")]
+layout_mode = 2
+
+[node name="Textbox" parent="MarginContainer" unique_id=242242630 instance=ExtResource("6_f6xt6")]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+instant = true
+
+[node name="Enemies" type="HBoxContainer" parent="." unique_id=233785513 node_paths=PackedStringArray("buttons_container")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -12.5
+offset_right = 12.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ww2ai")
+buttons_container = NodePath(".")
+
+[node name="Enemy" parent="Enemies" unique_id=1869243428 instance=ExtResource("5_qeyqd")]
+layout_mode = 2
+
+[node name="Enemy2" parent="Enemies" unique_id=1053902969 instance=ExtResource("5_qeyqd")]
+layout_mode = 2
+
+[connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
+[connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]

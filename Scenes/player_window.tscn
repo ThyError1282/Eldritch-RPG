@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bgaxfte0cl1ls"]
+
+[ext_resource type="Script" uid="uid://dkkmt47htrdhw" path="res://Scripts/player_window.gd" id="1_xvsdi"]
+
+[node name="PlayerWindow" type="Button" unique_id=339902121]
+custom_minimum_size = Vector2(63, 56)
+offset_right = 63.0
+offset_bottom = 56.0
+script = ExtResource("1_xvsdi")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1488324130]
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 56.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1621956484]
+layout_mode = 2
+
+[node name="PName" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1746610222]
+layout_mode = 2
+text = "P Name"
+
+[node name="HP" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1755576688]
+layout_mode = 2
+
+[node name="Left" type="Label" parent="PanelContainer/VBoxContainer/HP" unique_id=1180253212]
+layout_mode = 2
+text = "HP:"
+
+[node name="HP" type="Label" parent="PanelContainer/VBoxContainer/HP" unique_id=632013923]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "???"
+horizontal_alignment = 2
+
+[node name="MP" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=579771829]
+layout_mode = 2
+
+[node name="Left" type="Label" parent="PanelContainer/VBoxContainer/MP" unique_id=1655406752]
+layout_mode = 2
+text = "MP:"
+
+[node name="MP" type="Label" parent="PanelContainer/VBoxContainer/MP" unique_id=508593689]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "???"
+horizontal_alignment = 2

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dqfxuxnm6tnyi"]
+
+[ext_resource type="Script" uid="uid://bi4ojpd38sa05" path="res://Scenes/battle.gd" id="1_vr6xi"]
+[ext_resource type="Script" uid="uid://640wg2efcbqp" path="res://Scripts/menu.gd" id="1_wvl2i"]
+
+[node name="Battle" type="Control" unique_id=1882941068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vr6xi")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1548973808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1462075321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="PanelContainer" parent="MarginContainer" unique_id=1144736083 node_paths=PackedStringArray("buttons_container")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_wvl2i")
+buttons_container = NodePath("VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Options" unique_id=1986561074]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=63019249]
+layout_mode = 2
+text = "Fight"
+
+[node name="Button2" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=421961958]
+layout_mode = 2
+text = "Item"
+
+[node name="Button3" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=684384681]
+layout_mode = 2
+text = "Pray"
+
+[node name="Button4" type="Button" parent="MarginContainer/Options/VBoxContainer" unique_id=1090937003]
+layout_mode = 2
+text = "Flee"

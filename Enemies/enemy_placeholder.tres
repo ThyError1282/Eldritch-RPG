@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BattleActor" format=3 uid="uid://dkwfvivy6p2fp"]
+
+[ext_resource type="Script" uid="uid://dlsnpdk46lub4" path="res://Scripts/battle_actor.gd" id="1_ytswy"]
+
+[resource]
+script = ExtResource("1_ytswy")
+name = "placeholder"
+hp_max = 5
+metadata/_custom_type_script = "uid://dlsnpdk46lub4"

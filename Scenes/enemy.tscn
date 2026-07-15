@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://yeedyoklk0gp"]
+
+[ext_resource type="Texture2D" uid="uid://bvvvcro5rimtx" path="res://Art/enemy.png" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://cscd2poyypmd0" path="res://Scripts/enemy.gd" id="2_afpow"]
+[ext_resource type="Script" uid="uid://dlsnpdk46lub4" path="res://Scripts/battle_actor.gd" id="3_afpow"]
+
+[sub_resource type="Resource" id="Resource_c5ef4"]
+script = ExtResource("3_afpow")
+sprite = ExtResource("1_1f0kj")
+name = "Enemy"
+hp_max = 5
+metadata/_custom_type_script = "uid://dlsnpdk46lub4"
+
+[sub_resource type="Animation" id="Animation_1f0kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_afpow"]
+resource_name = "highlight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.1764706)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_287tu"]
+_data = {
+&"RESET": SubResource("Animation_1f0kj"),
+&"highlight": SubResource("Animation_afpow")
+}
+
+[node name="Enemy" type="TextureButton" unique_id=1869243428]
+texture_normal = ExtResource("1_1f0kj")
+script = ExtResource("2_afpow")
+data = SubResource("Resource_c5ef4")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1538153885]
+modulate = Color(1, 1, 1, 0.47058824)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=595731321]
+libraries/ = SubResource("AnimationLibrary_287tu")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

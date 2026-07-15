@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BattleActor" format=3 uid="uid://loo3ri2ubcah"]
+
+[ext_resource type="Script" uid="uid://dlsnpdk46lub4" path="res://Scripts/battle_actor.gd" id="1_7q4lt"]
+
+[resource]
+script = ExtResource("1_7q4lt")
+name = "Error"
+hp_max = 32
+metadata/_custom_type_script = "uid://dlsnpdk46lub4"

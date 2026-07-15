@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ciybf48kkst0x"]
+
+[ext_resource type="Script" uid="uid://bc4yiujemnx2j" path="res://Scripts/player_windows.gd" id="1_iadll"]
+[ext_resource type="PackedScene" uid="uid://bgaxfte0cl1ls" path="res://Scenes/player_window.tscn" id="1_vyg1b"]
+
+[node name="PlayerWindows" type="HBoxContainer" unique_id=2079563648]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -56.0
+offset_right = 132.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_iadll")
+
+[node name="PlayerWindow" parent="." unique_id=1488324130 instance=ExtResource("1_vyg1b")]
+layout_mode = 2
+
+[node name="PlayerWindow2" parent="." unique_id=1305092651 instance=ExtResource("1_vyg1b")]
+layout_mode = 2
+
+[node name="PlayerWindow3" parent="." unique_id=1545348933 instance=ExtResource("1_vyg1b")]
+layout_mode = 2
+
+[node name="PlayerWindow4" parent="." unique_id=1901616558 instance=ExtResource("1_vyg1b")]
+layout_mode = 2
