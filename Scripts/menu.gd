@@ -269,12 +269,12 @@ func disable_all(on: bool = true) -> void:
 func release() -> void:
 	button_enable_focus(false)
 
-func close() -> bool:
+func close(hide_also: bool = false) -> bool:
 	if in_menu_tree():
 		var button: BaseButton = buttons[index]
 		button.release_focus()
 		closed.emit()
-		if hide_on_close:
+		if hide_also:
 			hide()
 		return true
 	return false

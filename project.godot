@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Debug="*uid://fuotjqc8vsr0"
 Globals="*uid://cwsan2w823f3l"
 Data="*uid://casf3gb7ryac6"
+ScreenEffects="*uid://byj5wj1a5le38"
 
 [display]
 
@@ -35,9 +36,14 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+enemies=""
+
 [gui]
 
-theme/custom_font="uid://c0tes0ayuksmk"
+theme/custom="uid://c71qpapnakpeb"
+theme/custom_font="uid://cp2xmuvujsqfu"
 
 [physics]
 

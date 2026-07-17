@@ -2,7 +2,7 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c0tes0ayuksmk"
+uid="uid://cp2xmuvujsqfu"
 path="res://.godot/imported/04B_03__.TTF-283632cbc921347cde180fc791ffd2f6.fontdata"
 
 [deps]
@@ -34,8 +34,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-&"size": Vector2i(5, 0),
-&"variation_embolden": 0.0
+&"size": Vector2i(8, 0)
 }]
 language_support={}
 script_support={}

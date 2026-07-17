@@ -9,6 +9,7 @@ custom_minimum_size = Vector2(128, 40)
 offset_right = 128.0
 offset_bottom = 48.0
 script = ExtResource("1_qrjcb")
+instant = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=812650081]
 custom_minimum_size = Vector2(0, 36)

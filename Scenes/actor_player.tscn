@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d2e6p6k05o7ym"]
+
+[ext_resource type="Script" uid="uid://dq6y3yc8hcm26" path="res://Scripts/actor_player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://bivonmw6yberp" path="res://Scenes/sprite_sheet_animation.tscn" id="2_cvnsp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iwepf"]
+radius = 1.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" unique_id=609909867]
+script = ExtResource("1_v0iea")
+metadata/_edit_group_ = true
+
+[node name="SpriteSheetAnimation" parent="." unique_id=1203396613 instance=ExtResource("2_cvnsp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=850782276]
+position = Vector2(-0.5, 3)
+shape = SubResource("CircleShape2D_iwepf")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=593923152]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=139610428]
+shape = SubResource("CircleShape2D_6t5aa")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1325280275]

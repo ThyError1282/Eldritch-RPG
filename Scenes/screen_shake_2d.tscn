@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://j12mdbd256sy"]
+
+[ext_resource type="Script" uid="uid://ckesy7frskhbf" path="res://Scripts/screen_shake_2d.gd" id="1_a1kyv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a1kyv"]
+
+[node name="ScreenShake2D" type="Camera2D" unique_id=1741891420]
+script = ExtResource("1_a1kyv")
+noise = SubResource("FastNoiseLite_a1kyv")
+
+[node name="ChangeRotationTarget" type="Timer" parent="." unique_id=665585840]

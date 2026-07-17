@@ -1,0 +1,47 @@
+[gd_resource type="Theme" format=3 uid="uid://c71qpapnakpeb"]
+
+[ext_resource type="FontFile" uid="uid://cp2xmuvujsqfu" path="res://Text/04B_03__.TTF" id="1_a28cm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wv37v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h6aq"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 2
+border_width_right = 5
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a28cm"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 11
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("1_a28cm")
+Button/styles/focus = SubResource("StyleBoxEmpty_wv37v")
+Button/styles/normal = SubResource("StyleBoxFlat_6h6aq")
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_a28cm")
+MarginContainer/constants/margin_bottom = 5
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 5
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_a28cm")

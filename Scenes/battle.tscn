@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ciybf48kkst0x" path="res://Scenes/player_windows.tscn" id="4_lrv64"]
 [ext_resource type="PackedScene" uid="uid://yeedyoklk0gp" path="res://Scenes/enemy.tscn" id="5_qeyqd"]
 [ext_resource type="PackedScene" uid="uid://duoyklvanun7a" path="res://assets/Textbox/textbox.tscn" id="6_f6xt6"]
+[ext_resource type="PackedScene" uid="uid://c4714w2xo6ftr" path="res://Scenes/item_button.tscn" id="8_lrv64"]
+[ext_resource type="Script" uid="uid://hmds7fmla2vs" path="res://Scripts/inventory_menu.gd" id="8_qeyqd"]
+[ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="10_k7mbx"]
+[ext_resource type="PackedScene" path="res://Scenes/screen_shake_2d.tscn" id="11_upb72"]
 
 [node name="Battle" type="Control" unique_id=1882941068]
 layout_mode = 3
@@ -40,6 +44,31 @@ grow_vertical = 2
 texture = ExtResource("3_lrv64")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="Enemies" type="HBoxContainer" parent="." unique_id=233785513 node_paths=PackedStringArray("buttons_container")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -12.5
+offset_right = 27.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ww2ai")
+buttons_container = NodePath(".")
+
+[node name="Enemy" parent="Enemies" unique_id=1869243428 instance=ExtResource("5_qeyqd")]
+layout_mode = 2
+
+[node name="Enemy2" parent="Enemies" unique_id=1053902969 instance=ExtResource("5_qeyqd")]
+layout_mode = 2
+
+[node name="Enemy3" parent="Enemies" unique_id=1846255991 instance=ExtResource("5_qeyqd")]
+layout_mode = 2
 
 [node name="Letterboxes" type="Control" parent="." unique_id=1208648711]
 layout_mode = 1
@@ -113,35 +142,66 @@ text = "Flee"
 
 [node name="PlayerWindows" parent="MarginContainer" unique_id=2079563648 instance=ExtResource("4_lrv64")]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="Textbox" parent="MarginContainer" unique_id=242242630 instance=ExtResource("6_f6xt6")]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-instant = true
+handle_input = false
 
-[node name="Enemies" type="HBoxContainer" parent="." unique_id=233785513 node_paths=PackedStringArray("buttons_container")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.5
-offset_top = -12.5
-offset_right = 12.5
-offset_bottom = 12.5
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_ww2ai")
-buttons_container = NodePath(".")
+[node name="Inventory" type="PanelContainer" parent="MarginContainer" unique_id=218615730 node_paths=PackedStringArray("buttons_container")]
+visible = false
+custom_minimum_size = Vector2(240, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("8_qeyqd")
+buttons_container = NodePath("GridContainer")
 
-[node name="Enemy" parent="Enemies" unique_id=1869243428 instance=ExtResource("5_qeyqd")]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Inventory" unique_id=1298220242]
+layout_mode = 2
+columns = 2
+
+[node name="ItemButton" parent="MarginContainer/Inventory/GridContainer" unique_id=1727015153 instance=ExtResource("8_lrv64")]
 layout_mode = 2
 
-[node name="Enemy2" parent="Enemies" unique_id=1053902969 instance=ExtResource("5_qeyqd")]
+[node name="ItemButton2" parent="MarginContainer/Inventory/GridContainer" unique_id=1631830660 instance=ExtResource("8_lrv64")]
 layout_mode = 2
 
-[connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
+[node name="ItemButton3" parent="MarginContainer/Inventory/GridContainer" unique_id=1444967700 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton4" parent="MarginContainer/Inventory/GridContainer" unique_id=1744977786 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton5" parent="MarginContainer/Inventory/GridContainer" unique_id=1550972432 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton6" parent="MarginContainer/Inventory/GridContainer" unique_id=1141490112 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton7" parent="MarginContainer/Inventory/GridContainer" unique_id=300468413 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton8" parent="MarginContainer/Inventory/GridContainer" unique_id=540756762 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton9" parent="MarginContainer/Inventory/GridContainer" unique_id=1058861721 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="ItemButton10" parent="MarginContainer/Inventory/GridContainer" unique_id=836544691 instance=ExtResource("8_lrv64")]
+layout_mode = 2
+
+[node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("10_k7mbx")]
+position = Vector2(0, 5)
+base_offset = Vector2(0, 0)
+
+[node name="ScreenShake2D" parent="." unique_id=987204232 instance=ExtResource("11_upb72")]
+anchor_mode = 0
+
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]
+[connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
+[connection signal="button_pressed" from="MarginContainer/PlayerWindows" to="." method="_on_player_windows_button_pressed"]
+[connection signal="button_pressed" from="MarginContainer/Inventory" to="." method="_on_inventory_button_pressed"]

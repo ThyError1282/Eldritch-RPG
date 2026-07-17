@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://dkkmt47htrdhw" path="res://Scripts/player_window.gd" id="1_xvsdi"]
 
 [node name="PlayerWindow" type="Button" unique_id=339902121]
-custom_minimum_size = Vector2(63, 56)
-offset_right = 63.0
-offset_bottom = 56.0
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_xvsdi")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1488324130]
 layout_mode = 0
-offset_right = 63.0
-offset_bottom = 56.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1621956484]
 layout_mode = 2

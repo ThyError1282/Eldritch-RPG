@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bivonmw6yberp"]
+
+[ext_resource type="Texture2D" uid="uid://cu6bcrq6k7u1h" path="res://Art/player.png" id="1_lxtbr"]
+[ext_resource type="Script" uid="uid://b2mqnj1t03ycv" path="res://Scripts/sprite_sheet_animation.gd" id="2_3blbv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvv1p"]
+atlas = ExtResource("1_lxtbr")
+
+[node name="SpriteSheetAnimation" type="Sprite2D" unique_id=1203396613]
+texture = SubResource("AtlasTexture_jvv1p")
+script = ExtResource("2_3blbv")

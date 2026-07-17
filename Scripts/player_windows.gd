@@ -10,6 +10,7 @@ func _ready() -> void:
 			get_child(i).data = party[i]
 		else:
 			get_child(i).data = null
+	super()
 
 func activate(player_index: int) -> void:
 	if active_index == player_index:

@@ -11,6 +11,9 @@ var cell_size: Vector2 = Vector2(0,0)
 var event_log: Label = null
 var menu_has_focus: bool = false
 var textbox: Textbox = null
+var screen_shake: ScreenShake2D
+var player: CharacterBody2D = null
+var clock: Label
 
 func _ready():
 	randomize()
