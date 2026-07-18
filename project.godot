@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Eldritch RPG"
-run/main_scene="uid://dqfxuxnm6tnyi"
+run/main_scene="uid://qov080ad86n3"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

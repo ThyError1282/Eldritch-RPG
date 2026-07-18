@@ -31,6 +31,6 @@ func _shake() -> void:
 	
 	#if get_owner():
 		#get_owner().get_node("Main").global_position = offset
-	
+
 func add_trauma(amount: float = 0.5) -> void:
 	trauma = min(trauma + amount, 1.0)

@@ -24,11 +24,11 @@ func _ready() -> void:
 	moved.emit(position)
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_accept"):
-		var interactables: Array = interact_range.get_overlapping_bodies()
-		if interactables:
-			for node in interactables:
-				node.interact()
+	#if Input.is_action_pressed("ui_accept"):
+		#var interactables: Array = interact_range.get_overlapping_bodies()
+		#if interactables:
+			#for node in interactables:
+				#node.interact()
 	
 	if on_grid:
 		position = position.move_toward(target_position, speed * delta)

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4714w2xo6ftr" path="res://Scenes/item_button.tscn" id="8_lrv64"]
 [ext_resource type="Script" uid="uid://hmds7fmla2vs" path="res://Scripts/inventory_menu.gd" id="8_qeyqd"]
 [ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="10_k7mbx"]
-[ext_resource type="PackedScene" path="res://Scenes/screen_shake_2d.tscn" id="11_upb72"]
+[ext_resource type="PackedScene" uid="uid://j12mdbd256sy" path="res://Scenes/screen_shake_2d.tscn" id="11_upb72"]
 
 [node name="Battle" type="Control" unique_id=1882941068]
 layout_mode = 3

@@ -16,12 +16,15 @@ const INGAME_TO_REAL_MINUTE_DURATION: float = (2 * PI) / MINUTES_PER_DAY
 var time: float = 0.0
 var past_minute: float = -1.0
 var days_total: int = 0
+var paused: bool = false
 
 func _ready() -> void:
 	Globals.clock = self
 	reset_time()
 
 func _process(delta: float) -> void:
+	if paused:
+		return
 	time += delta * INGAME_TO_REAL_MINUTE_DURATION * INGAME_SPEED
 	_recalculate_time()
 
@@ -56,3 +59,6 @@ func _recalculate_time() -> void:
 		time_tick.emit(time, days_total, hour, minute)
 		
 	text = str(hour) + ":" + str(minute) + " " + suffix
+
+func pause(value: bool = true) -> void:
+	paused = value

@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name GridCursor extends Sprite2D
 
 var cell_size: Vector2 = Globals.CELL_SIZE
 

@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bank6dtvhthj8"]
+
+[ext_resource type="Texture2D" uid="uid://ddjciwuq4ltnx" path="res://Tilemaps/tiles.png" id="1_r0058"]
+
+[resource]
+resource_local_to_scene = true
+atlas = ExtResource("1_r0058")
+region = Rect2(0, 128, 16, 16)

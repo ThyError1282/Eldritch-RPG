@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dpo2c4a7mc2tg"]
+
+[ext_resource type="Script" uid="uid://cwl353bx87bc6" path="res://Scripts/door.gd" id="1_p0e35"]
+[ext_resource type="Texture2D" uid="uid://bank6dtvhthj8" path="res://Tilemaps/overworld.tres" id="1_w6aom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0058"]
+size = Vector2(16, 16)
+
+[node name="Door" type="Area2D" unique_id=1380012696]
+script = ExtResource("1_p0e35")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=853202566]
+texture = ExtResource("1_w6aom")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122040018]
+visible = false
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_r0058")
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=798299567]
+area_mask = 1
+
+[node name="CloseSound" type="AudioStreamPlayer2D" parent="." unique_id=1899814155]
+area_mask = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

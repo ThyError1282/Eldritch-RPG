@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://qov080ad86n3"]
+
+[ext_resource type="Script" uid="uid://bddoc7ldt5nas" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dey5i4oevugln" path="res://Rooms/overworld.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://lmelk4w0s2wg" path="res://Scenes/gui.tscn" id="3_wrm1d"]
+
+[node name="Game" type="Node" unique_id=1666445343]
+script = ExtResource("1_qxrlw")
+
+[node name="Overworld" parent="." unique_id=1022744473 instance=ExtResource("2_wrm1d")]
+
+[node name="GUI" parent="." unique_id=313838931 instance=ExtResource("3_wrm1d")]
+
+[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=2072545608]
