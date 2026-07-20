@@ -45,6 +45,13 @@ enemies=""
 theme/custom="uid://c71qpapnakpeb"
 theme/custom_font="uid://cp2xmuvujsqfu"
 
+[layer_names]
+
+2d_physics/layer_1="solids"
+2d_physics/layer_2="player"
+2d_physics/layer_3="npc"
+2d_physics/layer_4="objects"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

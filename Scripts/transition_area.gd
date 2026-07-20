@@ -11,9 +11,12 @@ signal triggered(room_path: String)
 @export var spawn_position: Vector2
 @export var trigger_on_exit: bool = false
 
-@onready var handler: Node = Globals.transition_handler
+@onready var handler: Node = null
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	handler = Globals.transition_handler
 	process_mode = PROCESS_MODE_ALWAYS
 	add_to_group("transition_areas")
 	set_deferred("monitorable", false)

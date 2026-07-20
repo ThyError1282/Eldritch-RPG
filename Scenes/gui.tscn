@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4ooc11r1m7ty" path="res://Scripts/gui.gd" id="1_gic31"]
 [ext_resource type="Script" uid="uid://640wg2efcbqp" path="res://Scripts/menu.gd" id="2_tbye2"]
+[ext_resource type="PackedScene" uid="uid://duoyklvanun7a" path="res://assets/Textbox/textbox.tscn" id="3_m6o0h"]
 [ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="3_rpies"]
 
 [node name="GUI" type="CanvasLayer" unique_id=313838931]
@@ -59,6 +60,12 @@ text = "Save"
 layout_mode = 2
 text = "Quit
 "
+
+[node name="Textbox" parent="Control/MarginContainer" unique_id=2137424924 instance=ExtResource("3_m6o0h")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+pause_tree = true
 
 [node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("3_rpies")]
 visible = false

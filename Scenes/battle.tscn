@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://j12mdbd256sy" path="res://Scenes/screen_shake_2d.tscn" id="11_upb72"]
 
 [node name="Battle" type="Control" unique_id=1882941068]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,6 +150,7 @@ custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+instant = true
 handle_input = false
 
 [node name="Inventory" type="PanelContainer" parent="MarginContainer" unique_id=218615730 node_paths=PackedStringArray("buttons_container")]
@@ -195,10 +197,12 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("10_k7mbx")]
+visible = false
 position = Vector2(0, 5)
 base_offset = Vector2(0, 0)
 
 [node name="ScreenShake2D" parent="." unique_id=987204232 instance=ExtResource("11_upb72")]
+process_mode = 3
 anchor_mode = 0
 
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]

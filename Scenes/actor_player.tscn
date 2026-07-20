@@ -3,13 +3,15 @@
 [ext_resource type="Script" uid="uid://dq6y3yc8hcm26" path="res://Scripts/actor_player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://bivonmw6yberp" path="res://Scenes/sprite_sheet_animation.tscn" id="2_cvnsp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iwepf"]
-radius = 1.7
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydudx"]
+size = Vector2(4, 4)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
-radius = 5.0
+radius = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=609909867]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_v0iea")
 metadata/_edit_group_ = true
 
@@ -17,14 +19,15 @@ metadata/_edit_group_ = true
 process_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=850782276]
-position = Vector2(-0.5, 3)
-shape = SubResource("CircleShape2D_iwepf")
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ydudx")
 
 [node name="InteractRange" type="Area2D" parent="." unique_id=593923152]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=139610428]
 shape = SubResource("CircleShape2D_6t5aa")
+debug_color = Color(0.75756997, 0.243074, 0.9406151, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1325280275]

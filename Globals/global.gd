@@ -7,7 +7,7 @@ enum States {
 
 const GAME_SIZE: Vector2 = Vector2(1152,648)
 const GAME_SIZE_HALVED: Vector2 = GAME_SIZE * 0.5
-const CELL_SIZE: Vector2 = Vector2(32,32)
+const CELL_SIZE: Vector2 = Vector2(8,8)
 const NULL_CELL: Vector2 = Vector2(-9999,-9999)
 
 var current_map: TileMapLayer = null

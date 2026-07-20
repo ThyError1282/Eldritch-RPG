@@ -3,13 +3,13 @@ class_name GUI extends CanvasLayer
 @onready var top_menu: Menu = $Control/MarginContainer/TopMenu
 
 func _ready() -> void:
-	hide()
+	top_menu.hide()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.pressed and event.keycode == KEY_M:
-		visible = !visible
-		get_tree().paused = visible
-		if visible:
+		top_menu.visible = !top_menu.visible
+		get_tree().paused = top_menu.visible
+		if top_menu.visible:
 			top_menu.button_focus(0)
 
 func _on_top_menu_button_pressed(button: BaseButton, index: int) -> void:

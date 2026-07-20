@@ -12,3 +12,4 @@ script = ExtResource("1_qxrlw")
 [node name="GUI" parent="." unique_id=313838931 instance=ExtResource("3_wrm1d")]
 
 [node name="BattleLayer" type="CanvasLayer" parent="." unique_id=2072545608]
+follow_viewport_enabled = true

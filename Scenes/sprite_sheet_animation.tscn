@@ -9,3 +9,9 @@ atlas = ExtResource("1_lxtbr")
 [node name="SpriteSheetAnimation" type="Sprite2D" unique_id=1203396613]
 texture = SubResource("AtlasTexture_jvv1p")
 script = ExtResource("2_3blbv")
+
+[node name="FrameAdvance" type="Timer" parent="." unique_id=2127673854]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="FrameAdvance" to="." method="_on_frame_advance_timeout"]

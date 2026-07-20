@@ -13,4 +13,4 @@ func _ready() -> void:
 
 func collision(pos: Vector2) -> bool:
 	var cell: Vector2 = local_to_map(pos)
-	return water.get_cell_source_id(cell) != -1  
+	return water.get_cell_source_id(cell) != -1 or walls.get_cell_source_id(cell) != -1

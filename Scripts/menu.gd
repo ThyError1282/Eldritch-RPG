@@ -333,4 +333,6 @@ func _on_closed() -> void:
 	tree.pop_back()
 	
 	if tree:
-		tree.back().button_focus()
+		var menu = tree.back()
+		if is_instance_valid(menu):
+			menu.button_focus()

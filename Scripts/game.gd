@@ -40,9 +40,9 @@ func goto_battle() -> void:
 	
 	var battle: Node = BATTLE.instantiate()
 	battle_layer.add_child(battle)
-	await(battle.tree_exiting)
 	
 	ScreenEffects.fade(false, 0.5)
+	await(battle.tree_exiting)
 	set_process_unhandled_key_input(true)
 	add_child(current_room)
 

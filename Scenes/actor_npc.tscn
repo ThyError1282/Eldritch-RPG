@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://slekx381cntd"]
+
+[ext_resource type="Script" uid="uid://cbcx6d40j8va3" path="res://Scripts/actor_npc.gd" id="1_pnyjt"]
+[ext_resource type="PackedScene" uid="uid://bivonmw6yberp" path="res://Scenes/sprite_sheet_animation.tscn" id="2_osust"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwepf"]
+size = Vector2(4, 4)
+
+[node name="NPC" type="CharacterBody2D" unique_id=609909867]
+collision_layer = 5
+script = ExtResource("1_pnyjt")
+is_shopkeeper = null
+dialogue_id = null
+metadata/_edit_group_ = true
+
+[node name="SpriteSheetAnimation" parent="." unique_id=1203396613 instance=ExtResource("2_osust")]
+process_mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=850782276]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_iwepf")
