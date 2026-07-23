@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://bnkr1lbj2q7av"]
+
+[ext_resource type="Script" uid="uid://cyba5hr8der7s" path="res://Globals/inventory.gd" id="1_ckhk1"]
+[ext_resource type="Script" uid="uid://b1t438dyijlj7" path="res://Globals/item.gd" id="1_kgwmc"]
+[ext_resource type="Resource" uid="uid://b5lq27uolay2l" path="res://Items/holy_vape.tres" id="2_0bjgs"]
+[ext_resource type="Resource" uid="uid://d1kf7u5gud3wk" path="res://Items/hellish_sword.tres" id="3_y602t"]
+
+[resource]
+script = ExtResource("1_ckhk1")
+items = Array[ExtResource("1_kgwmc")]([ExtResource("2_0bjgs"), ExtResource("3_y602t")])
+metadata/_custom_type_script = "uid://cyba5hr8der7s"

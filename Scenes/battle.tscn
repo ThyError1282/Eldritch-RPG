@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ciybf48kkst0x" path="res://Scenes/player_windows.tscn" id="4_lrv64"]
 [ext_resource type="PackedScene" uid="uid://yeedyoklk0gp" path="res://Scenes/enemy.tscn" id="5_qeyqd"]
 [ext_resource type="PackedScene" uid="uid://duoyklvanun7a" path="res://assets/Textbox/textbox.tscn" id="6_f6xt6"]
-[ext_resource type="PackedScene" uid="uid://c4714w2xo6ftr" path="res://Scenes/item_button.tscn" id="8_lrv64"]
-[ext_resource type="Script" uid="uid://hmds7fmla2vs" path="res://Scripts/inventory_menu.gd" id="8_qeyqd"]
+[ext_resource type="PackedScene" uid="uid://ow08glqkabd" path="res://Scenes/inventory_menu.tscn" id="8_k7mbx"]
 [ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="10_k7mbx"]
 [ext_resource type="PackedScene" uid="uid://j12mdbd256sy" path="res://Scenes/screen_shake_2d.tscn" id="11_upb72"]
 
@@ -153,47 +152,7 @@ size_flags_vertical = 0
 instant = true
 handle_input = false
 
-[node name="Inventory" type="PanelContainer" parent="MarginContainer" unique_id=218615730 node_paths=PackedStringArray("buttons_container")]
-visible = false
-custom_minimum_size = Vector2(240, 64)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-script = ExtResource("8_qeyqd")
-buttons_container = NodePath("GridContainer")
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/Inventory" unique_id=1298220242]
-layout_mode = 2
-columns = 2
-
-[node name="ItemButton" parent="MarginContainer/Inventory/GridContainer" unique_id=1727015153 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton2" parent="MarginContainer/Inventory/GridContainer" unique_id=1631830660 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton3" parent="MarginContainer/Inventory/GridContainer" unique_id=1444967700 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton4" parent="MarginContainer/Inventory/GridContainer" unique_id=1744977786 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton5" parent="MarginContainer/Inventory/GridContainer" unique_id=1550972432 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton6" parent="MarginContainer/Inventory/GridContainer" unique_id=1141490112 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton7" parent="MarginContainer/Inventory/GridContainer" unique_id=300468413 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton8" parent="MarginContainer/Inventory/GridContainer" unique_id=540756762 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton9" parent="MarginContainer/Inventory/GridContainer" unique_id=1058861721 instance=ExtResource("8_lrv64")]
-layout_mode = 2
-
-[node name="ItemButton10" parent="MarginContainer/Inventory/GridContainer" unique_id=836544691 instance=ExtResource("8_lrv64")]
+[node name="InventoryMenu" parent="MarginContainer" unique_id=2062174293 instance=ExtResource("8_k7mbx")]
 layout_mode = 2
 
 [node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("10_k7mbx")]
@@ -208,4 +167,4 @@ anchor_mode = 0
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]
 [connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]
 [connection signal="button_pressed" from="MarginContainer/PlayerWindows" to="." method="_on_player_windows_button_pressed"]
-[connection signal="button_pressed" from="MarginContainer/Inventory" to="." method="_on_inventory_button_pressed"]
+[connection signal="button_pressed" from="MarginContainer/InventoryMenu" to="." method="_on_inventory_menu_button_pressed"]

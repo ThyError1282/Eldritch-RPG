@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://7oblcaom3frl"]
+
+[ext_resource type="Script" uid="uid://db2xwrgb33h01" path="res://Scripts/money_label.gd" id="1_1bxu7"]
+
+[node name="MoneyLabel" type="Label" unique_id=1418852991]
+offset_right = 40.0
+offset_bottom = 8.0
+text = "00000"
+horizontal_alignment = 2
+script = ExtResource("1_1bxu7")

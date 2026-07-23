@@ -2,7 +2,7 @@ class_name Inventory extends Resource
 
 signal updated()
 
-var items: Array = []
+@export var items: Array[Item] = []
 var max_size: int = 10
 
 func get_items() -> Array:
@@ -22,15 +22,15 @@ func get_item_by_position(pos: int) -> Item:
 		return items[pos]
 	return null
 
-func add_item_by_name(item_name: String, quantity: int = 1) -> bool:
-	var item: Item = Data.items.get(item_name)
+func add_item_by_key(item_key: String, quantity: int = 1) -> bool:
+	var item: Item = Data.items.get(item_key)
 	
 	if not item:
 		return false
 	
-	if item.stackable:
-		var existing_stack: Item = get_item_by_name(item_name)
-		if existing_stack:
+	if item.quantity_max > 1:
+		var existing_stack: Item = get_item_by_name(item.name)
+		if existing_stack and existing_stack.can_stack(quantity):
 			existing_stack.quantity += quantity
 			return true
 	
@@ -47,7 +47,7 @@ func add_item(item: Item) -> bool:
 	if not item:
 		return false
 	
-	return add_item_by_name(item.name, item.quantity)
+	return add_item_by_key(item.key, item.quantity)
 
 func remove_item(item: Item) -> bool:
 	if not item:

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c4wwkneosvvfh" path="res://Scripts/item_button.gd" id="1_t3hyk"]
 
 [node name="ItemButton" type="Button" unique_id=1727015153]
+offset_right = 50.0
+offset_bottom = 12.0
 size_flags_horizontal = 3
 text = "ItemName"
 alignment = 0

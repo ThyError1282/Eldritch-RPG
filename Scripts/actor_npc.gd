@@ -2,7 +2,7 @@ class_name NPC extends Actor
 
 const SHOP: PackedScene = preload("res://Scenes/shop.tscn")
 
-@export var is_shopkeeper: bool = false
+@export var inventory: Inventory = null
 @export var character_index: int = 0:
 	set(value):
 		character_index = value
@@ -21,9 +21,10 @@ func interact() -> void:
 	facing = Globals.player.facing * -1
 	idle()
 	
-	if is_shopkeeper:
+	if inventory:
 		var shop: Shop = SHOP.instantiate()
 		add_child(shop)
+		shop.set_inventory(inventory)
 	else:
 		var text: Array = Dialogue.get_from_id(dialogue_id)
 		if Globals.textbox:

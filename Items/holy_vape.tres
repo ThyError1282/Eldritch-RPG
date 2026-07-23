@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_7c63s")
-stackable = false
-value = 2
+name = "Holy Vape"
+quantity_max = 5
+value = 25
+description = "Its a vape!"
 metadata/_custom_type_script = "uid://b1t438dyijlj7"

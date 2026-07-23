@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b1t438dyijlj7" path="res://Globals/item.gd" id="1_elflg"]
 [ext_resource type="Script" uid="uid://dlsnpdk46lub4" path="res://Scripts/battle_actor.gd" id="1_tu2p3"]
-[ext_resource type="Resource" uid="uid://b5lq27uolay2l" path="res://Items/holy_vape.tres" id="2_bicmn"]
 
 [resource]
 script = ExtResource("1_tu2p3")
 name = "Mac"
 hp_max = 16
 mp_max = 16
-items = Array[ExtResource("1_elflg")]([ExtResource("2_bicmn")])
 metadata/_custom_type_script = "uid://dlsnpdk46lub4"

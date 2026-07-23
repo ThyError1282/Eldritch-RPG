@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c8r6kgnxt38ha" path="res://Scripts/room.gd" id="1_ymk4h"]
 [ext_resource type="Texture2D" uid="uid://ddjciwuq4ltnx" path="res://Tilemaps/tiles.png" id="2_dxgpv"]
 [ext_resource type="PackedScene" uid="uid://d2e6p6k05o7ym" path="res://Scenes/actor_player.tscn" id="3_2l458"]
+[ext_resource type="Resource" uid="uid://bnkr1lbj2q7av" path="res://Inventories/dams_grove.tres" id="4_2l458"]
 [ext_resource type="PackedScene" uid="uid://slekx381cntd" path="res://Scenes/actor_npc.tscn" id="4_dxgpv"]
 [ext_resource type="Script" uid="uid://cu6fbbifos7to" path="res://Scripts/transition_area.gd" id="4_y73tp"]
 [ext_resource type="Script" uid="uid://cosyvb6d5lrvm" path="res://DayNightCycle/day_night_cycle.gd" id="5_qr7r0"]
@@ -642,14 +643,13 @@ metadata/_edit_lock_ = true
 position = Vector2(112, 88)
 collision_layer = 4
 collision_mask = 0
-is_shopkeeper = false
 dialogue_id = 0
 
 [node name="Shopkeeper" parent="Actors" unique_id=1706293020 instance=ExtResource("4_dxgpv")]
 position = Vector2(224, 88)
 collision_layer = 4
 collision_mask = 0
-is_shopkeeper = true
+inventory = ExtResource("4_2l458")
 dialogue_id = 0
 
 [node name="Player" parent="Actors" unique_id=574127370 instance=ExtResource("3_2l458")]

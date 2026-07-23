@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://c71qpapnakpeb"]
 
 [ext_resource type="FontFile" uid="uid://cp2xmuvujsqfu" path="res://Text/04B_03__.TTF" id="1_a28cm"]
+[ext_resource type="StyleBox" uid="uid://whihy1eo8oul" path="res://Text/panel_theme.tres" id="2_n1jw8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wv37v"]
 
@@ -38,7 +39,6 @@ Button/font_sizes/font_size = 8
 Button/fonts/font = ExtResource("1_a28cm")
 Button/styles/focus = SubResource("StyleBoxEmpty_wv37v")
 Button/styles/normal = SubResource("StyleBoxFlat_6h6aq")
-HBoxContainer/constants/separation = 10
 Label/font_sizes/font_size = 8
 Label/fonts/font = ExtResource("1_a28cm")
 MarginContainer/constants/margin_bottom = 5
@@ -46,4 +46,4 @@ MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 5
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_a28cm")
-VBoxContainer/constants/separation = 10
+PopupPanel/styles/panel = ExtResource("2_n1jw8")

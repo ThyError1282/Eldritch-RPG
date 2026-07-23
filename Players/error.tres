@@ -10,5 +10,5 @@ name = "Error"
 hp_max = 32
 attack = 7
 defense = 3
-items = Array[ExtResource("1_omll2")]([ExtResource("2_bpk0l"), ExtResource("2_bpk0l"), ExtResource("2_bpk0l"), ExtResource("2_bpk0l"), ExtResource("2_bpk0l"), ExtResource("2_bpk0l")])
+items = Array[ExtResource("1_omll2")]([ExtResource("2_bpk0l")])
 metadata/_custom_type_script = "uid://dlsnpdk46lub4"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d1kf7u5gud3wk"]
+
+[ext_resource type="Script" uid="uid://b1t438dyijlj7" path="res://Globals/item.gd" id="1_ff2sx"]
+
+[resource]
+script = ExtResource("1_ff2sx")
+name = "Hellish Sword"
+value = 17
+description = "This is your weapon!"
+metadata/_custom_type_script = "uid://b1t438dyijlj7"

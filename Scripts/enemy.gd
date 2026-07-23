@@ -13,7 +13,7 @@ class_name Enemy extends TextureButton
 func _ready() -> void:
 	animation_player.play("RESET")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not hit_flash.is_stopped():
 		modulate.a = randf()
 

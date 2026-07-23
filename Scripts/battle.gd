@@ -12,14 +12,14 @@ var current_item: Item = null
 @onready var enemies: Menu = $Enemies
 @onready var player_windows: PlayerWindows = $MarginContainer/PlayerWindows
 @onready var textbox: PanelContainer = $MarginContainer/Textbox
-@onready var inventory: InventoryMenu = $MarginContainer/Inventory
+@onready var inventory_menu: InventoryMenu = $MarginContainer/InventoryMenu
 
 func _ready() -> void:
 	goto_next_player()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		if enemies.close() or player_windows.close() or inventory.close(true):
+		if enemies.close() or player_windows.close() or inventory_menu.close(true):
 			options.button_focus()
 		elif current_player_index > 0 and options.menu_is_focused():
 			event_queue.pop_back()
@@ -33,7 +33,7 @@ func goto_next_player(dir: int = 1) -> void:
 	dir = clampi(dir, -1, 1)
 	current_player_index += dir
 	current_player_index = clampi(current_player_index, 0, party.size())
-	inventory.hide()
+	inventory_menu.hide()
 	
 	if current_player_index >= party.size():
 		for enemy: Enemy in enemies.get_buttons():
@@ -62,8 +62,8 @@ func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 			enemies.button_focus()
 		"Item":
 			current_action = Actions.ITEM
-			inventory.inventory = party[current_player_index].inventory
-			inventory.button_focus(0)
+			inventory_menu.inventory = party[current_player_index].inventory
+			inventory_menu.button_focus(0)
 		_:
 			pass
 
@@ -71,7 +71,7 @@ func _on_enemies_button_pressed(button: BaseButton, _index: int) -> void:
 	event_queue.add(current_action, party[current_player_index], button.data, current_item)
 	goto_next_player()
 
-func _on_inventory_button_pressed(button: BaseButton, _index: int) -> void:
+func _on_inventory_menu_button_pressed(button: BaseButton, _index: int) -> void:
 	if button.item:
 		current_item = button.item
 		player_windows.button_focus(0)

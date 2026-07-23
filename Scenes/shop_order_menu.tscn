@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cq6y44xu7mk7j"]
+
+[ext_resource type="Script" uid="uid://cfie08aagbcym" path="res://Scripts/shop_order_menu.gd" id="1_0gyv6"]
+[ext_resource type="StyleBox" uid="uid://whihy1eo8oul" path="res://Text/panel_theme.tres" id="1_sv5hc"]
+[ext_resource type="StyleBox" uid="uid://ct163fpyfgpd1" path="res://Text/button_theme.tres" id="2_w2lmj"]
+[ext_resource type="PackedScene" uid="uid://c5dxi1bbyp3ph" path="res://Scenes/arrow_blinking.tscn" id="3_5nt02"]
+
+[sub_resource type="Animation" id="Animation_sv5hc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Buttons/Quantity/Quantity:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xn0lj"]
+resource_name = "default"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Buttons/Quantity/Quantity:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.58103293, 0.581033, 0.58103275, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8dsp"]
+_data = {
+&"RESET": SubResource("Animation_sv5hc"),
+&"default": SubResource("Animation_xn0lj")
+}
+
+[node name="ShopOrderMenu" type="PanelContainer" unique_id=1849549009 node_paths=PackedStringArray("buttons_container")]
+process_mode = 3
+offset_right = 100.0
+offset_bottom = 38.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("1_sv5hc")
+script = ExtResource("1_0gyv6")
+buttons_container = NodePath("Main/Buttons")
+
+[node name="Main" type="VBoxContainer" parent="." unique_id=1100427520]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="Main" unique_id=483011581]
+layout_mode = 2
+text = "Buy An Item?"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Main" unique_id=2114785889]
+layout_mode = 2
+
+[node name="Quantity" type="Button" parent="Main/Buttons" unique_id=1653250192]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_w2lmj")
+text = "Quantity:"
+alignment = 0
+
+[node name="Quantity" type="Label" parent="Main/Buttons/Quantity" unique_id=544344704]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -4.0
+offset_right = -10.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+
+[node name="ArrowBlinkingLeft" parent="Main/Buttons/Quantity" unique_id=1419254973 instance=ExtResource("3_5nt02")]
+position = Vector2(73, 9)
+rotation = 3.1415927
+frame_progress = 0.21395202
+
+[node name="ArrowBlinkingRight" parent="Main/Buttons/Quantity" unique_id=319330012 instance=ExtResource("3_5nt02")]
+position = Vector2(85, 2)
+frame_progress = 0.19010538
+
+[node name="Cost" type="Label" parent="Main" unique_id=1894597122]
+layout_mode = 2
+text = "Cost:"
+
+[node name="Cost" type="Label" parent="Main/Cost" unique_id=1578824894]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -4.0
+offset_right = -10.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+
+[node name="Instructions" type="Label" parent="Main" unique_id=63721410]
+visible = false
+layout_mode = 2
+text = "A: Confirm B: Cancel"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1773184949]
+libraries/ = SubResource("AnimationLibrary_q8dsp")
+autoplay = &"default"
+
+[connection signal="button_pressed" from="." to="." method="_on_button_pressed"]
+[connection signal="closed" from="." to="." method="_on_closed"]

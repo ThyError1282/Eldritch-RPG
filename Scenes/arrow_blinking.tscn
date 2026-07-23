@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c5dxi1bbyp3ph"]
+
+[ext_resource type="Texture2D" uid="uid://blfk1nmjjvm02" path="res://Art/arrow_blinking.png" id="1_r4bb6"]
+[ext_resource type="Script" uid="uid://bqxnqdybdt1r4" path="res://Scripts/arrow_blinking.gd" id="2_u0cs6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0cs6"]
+atlas = ExtResource("1_r4bb6")
+region = Rect2(0, 0, 5, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkujt"]
+atlas = ExtResource("1_r4bb6")
+region = Rect2(5, 0, 5, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwepf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0cs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkujt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ArrowBlinking" type="AnimatedSprite2D" unique_id=319330012]
+sprite_frames = SubResource("SpriteFrames_iwepf")
+autoplay = "default"
+frame_progress = 0.8541584
+centered = false
+script = ExtResource("2_u0cs6")

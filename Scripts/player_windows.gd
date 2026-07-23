@@ -1,6 +1,6 @@
 class_name PlayerWindows extends Menu
 
-var active_index: int = -1
+var active_index: int = 0
 
 @onready var party: Array = Data.party
 
@@ -16,10 +16,10 @@ func activate(player_index: int) -> void:
 	if active_index == player_index:
 		return
 	
-	if active_index != -1:
+	if active_index != 0:
 		get_child(active_index).activate(false)
 	
 	active_index = player_index
 	
-	if active_index != -1:	
+	if active_index != 0:
 		get_child(active_index).activate(true)
