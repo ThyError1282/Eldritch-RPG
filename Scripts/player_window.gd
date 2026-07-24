@@ -3,6 +3,7 @@ class_name PlayerWindow extends Button
 var tween: Tween = null
 
 @onready var start_y: float = position.y
+@onready var panel_container: PanelContainer = $PanelContainer
 @onready var p_name: Label = $PanelContainer/VBoxContainer/PName
 @onready var hp: Label = $PanelContainer/VBoxContainer/HP/HP
 @onready var mp: Label = $PanelContainer/VBoxContainer/MP/MP
@@ -34,7 +35,7 @@ func activate(on: bool) -> void:
 		tween.kill()
 	
 	tween = create_tween()
-	tween.tween_property(self, "position:y", target_y, duration).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(panel_container, "position:y", target_y, duration).set_trans(Tween.TRANS_CIRC)
 
 func _on_data_hp_changed(hp: int, _hp_max: int, _value_change: int) -> void:
 	self.hp.text = str(hp)
