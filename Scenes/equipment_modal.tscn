@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://dnx6ie86eb88e"]
+
+[ext_resource type="Script" uid="uid://640wg2efcbqp" path="res://Scripts/menu.gd" id="1_cxrdy"]
+[ext_resource type="PackedScene" uid="uid://c4714w2xo6ftr" path="res://Scenes/item_button.tscn" id="2_ivnbd"]
+[ext_resource type="Texture2D" uid="uid://cu6bcrq6k7u1h" path="res://Art/player.png" id="3_sviox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivnbd"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sviox"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfw6m"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f14x"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5rk7"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ce3s"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyfpe"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpjx5"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4rg6"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6rox"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv624"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsnw0"]
+resource_local_to_scene = true
+atlas = ExtResource("3_sviox")
+region = Rect2(0, 0, 8, 8)
+
+[node name="EquipmentModal" type="VBoxContainer" unique_id=616247350 node_paths=PackedStringArray("buttons_container")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+script = ExtResource("1_cxrdy")
+buttons_container = NodePath("HBoxContainer/TopMenu/TopMenu")
+hide_on_start = true
+hide_on_close = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=304689494]
+layout_mode = 2
+
+[node name="TopMenu" type="PanelContainer" parent="HBoxContainer" unique_id=584460143]
+layout_mode = 2
+
+[node name="TopMenu" type="HBoxContainer" parent="HBoxContainer/TopMenu" unique_id=1370321038]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Equip" type="Button" parent="HBoxContainer/TopMenu/TopMenu" unique_id=1387549281]
+layout_mode = 2
+text = "Equip"
+
+[node name="Clear" type="Button" parent="HBoxContainer/TopMenu/TopMenu" unique_id=1604716080]
+layout_mode = 2
+text = "Clear"
+
+[node name="Remove" type="Button" parent="HBoxContainer/TopMenu/TopMenu" unique_id=1386649417]
+layout_mode = 2
+text = "Remove"
+
+[node name="Optimize" type="Button" parent="HBoxContainer/TopMenu/TopMenu" unique_id=1273277216]
+layout_mode = 2
+text = "Optimize"
+
+[node name="Extra" type="PanelContainer" parent="HBoxContainer" unique_id=402091028]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/Extra" unique_id=937313066]
+layout_mode = 2
+text = "Available: "
+
+[node name="Equipment" type="HBoxContainer" parent="." unique_id=866253118]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Equipped" type="PanelContainer" parent="Equipment" unique_id=1466515567]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Equipment/Equipped" unique_id=1366478336]
+layout_mode = 2
+
+[node name="Slots" type="VBoxContainer" parent="Equipment/Equipped/HBoxContainer" unique_id=1417782333]
+layout_mode = 2
+
+[node name="Weapon" type="Label" parent="Equipment/Equipped/HBoxContainer/Slots" unique_id=713102094]
+layout_mode = 2
+text = "WEAP"
+
+[node name="Head" type="Label" parent="Equipment/Equipped/HBoxContainer/Slots" unique_id=1890096381]
+layout_mode = 2
+text = "HEAD"
+
+[node name="Chest" type="Label" parent="Equipment/Equipped/HBoxContainer/Slots" unique_id=1531100055]
+layout_mode = 2
+text = "CHEST"
+
+[node name="Legs" type="Label" parent="Equipment/Equipped/HBoxContainer/Slots" unique_id=1389129686]
+layout_mode = 2
+text = "LEGS"
+
+[node name="Boots" type="Label" parent="Equipment/Equipped/HBoxContainer/Slots" unique_id=2018885369]
+layout_mode = 2
+text = "BOOTS"
+
+[node name="Accessory" type="Label" parent="Equipment/Equipped/HBoxContainer/Slots" unique_id=1272751449]
+layout_mode = 2
+text = "ACC"
+
+[node name="Items" type="VBoxContainer" parent="Equipment/Equipped/HBoxContainer" unique_id=1419353402]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ItemButton" parent="Equipment/Equipped/HBoxContainer/Items" unique_id=1727015153 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_ivnbd")
+
+[node name="ItemButton2" parent="Equipment/Equipped/HBoxContainer/Items" unique_id=1580950351 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_sviox")
+
+[node name="ItemButton3" parent="Equipment/Equipped/HBoxContainer/Items" unique_id=1033185564 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_bfw6m")
+
+[node name="ItemButton4" parent="Equipment/Equipped/HBoxContainer/Items" unique_id=520637968 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_1f14x")
+
+[node name="ItemButton5" parent="Equipment/Equipped/HBoxContainer/Items" unique_id=148624740 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_k5rk7")
+
+[node name="ItemButton6" parent="Equipment/Equipped/HBoxContainer/Items" unique_id=1366417092 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_6ce3s")
+
+[node name="Stock" type="PanelContainer" parent="Equipment" unique_id=1580886561]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Equipment/Stock" unique_id=1621156284]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ItemButton" parent="Equipment/Stock/VBoxContainer" unique_id=1866183282 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_hyfpe")
+
+[node name="ItemButton2" parent="Equipment/Stock/VBoxContainer" unique_id=151452317 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_xpjx5")
+
+[node name="ItemButton3" parent="Equipment/Stock/VBoxContainer" unique_id=984959794 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_v4rg6")
+
+[node name="ItemButton4" parent="Equipment/Stock/VBoxContainer" unique_id=1555934643 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_f6rox")
+
+[node name="ItemButton5" parent="Equipment/Stock/VBoxContainer" unique_id=753731201 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_tv624")
+
+[node name="ItemButton6" parent="Equipment/Stock/VBoxContainer" unique_id=1069611915 instance=ExtResource("2_ivnbd")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_rsnw0")

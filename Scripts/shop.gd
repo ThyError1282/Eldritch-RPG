@@ -25,15 +25,14 @@ func set_inventory(inventory: Inventory) -> void:
 
 func _on_top_menu_button_pressed(button: BaseButton, index: int) -> void:
 	top_menu.hide()
+	main.show()
 	
 	match button.text:
 		"Buy":
 			dialogue.text = "See anything ya like?"
-			main.show()
 			inventory_menu.button_focus(0)
 		"Sell":
 			dialogue.text = "What ya interested in pawning?"
-			main.show()
 			inventory_menu.button_focus(0)
 		"Exit":
 			_exit()
@@ -64,16 +63,11 @@ func _on_players_button_pressed(_button: BaseButton, index: int) -> void:
 	var player: BattleActor = Data.party[index]
 	player.inventory.add_item(current_item)
 	Data.money -= current_item.get_total_value()
-	shop_order_menu.clear()
-	inventory_menu.button_focus()
+	shop_order_menu.close()
 
 func _on_inventory_closed() -> void:
 	dialogue.text = "Welcome!"
 	main.hide()
-	top_menu.button_focus()
 
 func _on_top_menu_closed() -> void:
 	_exit()
-
-func _on_shop_order_menu_closed() -> void:
-	inventory_menu.button_focus()

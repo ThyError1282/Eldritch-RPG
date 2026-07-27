@@ -82,6 +82,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_3ps1r")
+show_quantities = false
 auto_wrap = false
 buttons_container = NodePath("ScrollContainer/HBoxContainer/Items")
 
@@ -324,7 +325,6 @@ visible = false
 [connection signal="button_pressed" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory" to="." method="_on_inventory_button_pressed"]
 [connection signal="closed" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory" to="." method="_on_inventory_closed"]
 [connection signal="updated" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory" to="." method="_on_inventory_updated"]
-[connection signal="closed" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/RightSide/ShopOrderMenu" to="." method="_on_shop_order_menu_closed"]
 [connection signal="item_and_quantity_selected" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/RightSide/ShopOrderMenu" to="." method="_on_shop_order_menu_item_and_quantity_selected"]
 [connection signal="button_pressed" from="Control/MarginContainer/VBoxContainer/Main/Players" to="." method="_on_players_button_pressed"]
 [connection signal="button_pressed" from="Control/TopMenu" to="." method="_on_top_menu_button_pressed"]

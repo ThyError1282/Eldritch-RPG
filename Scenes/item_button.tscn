@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c4714w2xo6ftr"]
 
+[ext_resource type="Texture2D" uid="uid://ct4bqijklpyj0" path="res://Art/item_icons.tres" id="1_48l8j"]
 [ext_resource type="Script" uid="uid://c4wwkneosvvfh" path="res://Scripts/item_button.gd" id="1_t3hyk"]
 
 [node name="ItemButton" type="Button" unique_id=1727015153]
@@ -7,6 +8,7 @@ offset_right = 100.0
 offset_bottom = 12.0
 size_flags_horizontal = 3
 text = "ItemName"
+icon = ExtResource("1_48l8j")
 alignment = 0
 script = ExtResource("1_t3hyk")
 

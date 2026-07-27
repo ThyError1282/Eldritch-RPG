@@ -2,9 +2,26 @@ class_name Item extends Resource
 
 signal updated(quantity: int)
 
+enum Types {
+	NOT_SET,
+	SHIELD,
+	HELM,
+	CHEST,
+	LEGS,
+	BOOTS,
+	ACCESSORY,
+	CONSUMABLE,
+	KEY,
+	BOOK,
+	SWORD,
+	DAGGER,
+	STAFF,
+}
+
 const TEXTURE: AtlasTexture = null
 
 @export var name: String = ""
+@export var type: Types = Types.NOT_SET
 @export var texture: AtlasTexture = null
 @export var quantity: int = 1:
 	set(n):
@@ -21,6 +38,9 @@ func duplicate_custom() -> Item:
 	var dupe: Item = self.duplicate()
 	dupe.name = name
 	dupe.quantity = quantity
+	dupe.description = description
+	dupe.value = value
+	dupe.key = key
 	return dupe
 
 func can_stack(quantity: int) -> bool:

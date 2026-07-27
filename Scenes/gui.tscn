@@ -9,7 +9,6 @@
 
 [node name="GUI" type="CanvasLayer" unique_id=313838931]
 process_mode = 3
-follow_viewport_enabled = true
 script = ExtResource("1_gic31")
 
 [node name="Control" type="Control" parent="." unique_id=81465366]
@@ -110,10 +109,12 @@ layout_mode = 2
 text = "Discard"
 
 [node name="InventoryMenu" parent="Control/MarginContainer/HBoxContainer/ItemsModal" unique_id=2062174293 instance=ExtResource("5_3w84o")]
+process_mode = 3
 custom_minimum_size = Vector2(225, 64)
 layout_mode = 2
 size_flags_horizontal = 1
-hide_on_focus_exit = true
+hide_on_start = true
+hide_on_close = true
 
 [node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("3_rpies")]
 visible = false

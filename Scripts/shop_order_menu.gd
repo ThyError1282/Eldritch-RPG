@@ -69,4 +69,5 @@ func _on_button_pressed(_button: BaseButton, _index: int) -> void:
 		# TODO error sound
 
 func _on_closed() -> void:
+	super()
 	clear()

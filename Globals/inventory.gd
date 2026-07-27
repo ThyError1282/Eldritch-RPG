@@ -22,6 +22,9 @@ func get_item_by_position(pos: int) -> Item:
 		return items[pos]
 	return null
 
+func is_empty() -> bool:
+	return get_size() == 0
+
 func add_item_by_key(item_key: String, quantity: int = 1) -> bool:
 	var item: Item = Data.items.get(item_key)
 	
@@ -43,17 +46,17 @@ func add_item_by_key(item_key: String, quantity: int = 1) -> bool:
 		
 	return false
 
-func add_item(item: Item) -> bool:
+func add_item(item: Item, quantity: int = item.quantity) -> bool:
 	if not item:
 		return false
 	
-	return add_item_by_key(item.key, item.quantity)
+	return add_item_by_key(item.key, quantity)
 
-func remove_item(item: Item) -> bool:
+func remove_item(item: Item, quantity: int = item.quantity) -> bool:
 	if not item:
 		return false
 	
-	item.quantity -= 1
+	item.quantity -= quantity
 	if item.quantity == 0:
 		items.erase(item)
 	updated.emit()

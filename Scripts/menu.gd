@@ -330,7 +330,7 @@ func _on_activated() -> void:
 func _on_closed() -> void:
 	#print("closing ", name)
 	_close_menus_in_front_of_self()
-	tree.pop_back()
+	tree.erase(self)
 	
 	if tree:
 		var menu = tree.back()

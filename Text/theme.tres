@@ -3,6 +3,14 @@
 [ext_resource type="FontFile" uid="uid://cp2xmuvujsqfu" path="res://Text/04B_03__.TTF" id="1_a28cm"]
 [ext_resource type="StyleBox" uid="uid://whihy1eo8oul" path="res://Text/panel_theme.tres" id="2_n1jw8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2snr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 2
+border_width_right = 5
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wv37v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h6aq"]
@@ -37,6 +45,7 @@ shadow_size = 2
 Button/colors/font_outline_color = Color(0, 0, 0, 0)
 Button/font_sizes/font_size = 8
 Button/fonts/font = ExtResource("1_a28cm")
+Button/styles/disabled = SubResource("StyleBoxFlat_y2snr")
 Button/styles/focus = SubResource("StyleBoxEmpty_wv37v")
 Button/styles/normal = SubResource("StyleBoxFlat_6h6aq")
 Label/font_sizes/font_size = 8
