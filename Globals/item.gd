@@ -18,6 +18,7 @@ enum Types {
 	STAFF,
 }
 
+
 const TEXTURE: AtlasTexture = null
 
 @export var name: String = ""
@@ -29,6 +30,10 @@ const TEXTURE: AtlasTexture = null
 		updated.emit(quantity)
 
 @export var quantity_max: int = 1
+@export var attack: int = 0
+@export var defense: int = 0
+@export var magic: int = 0
+@export var speed: int = 0
 @export var value: int = 0
 @export_multiline var description: String = ""
 
@@ -40,6 +45,10 @@ func duplicate_custom() -> Item:
 	dupe.quantity = quantity
 	dupe.description = description
 	dupe.value = value
+	dupe.attack = attack
+	dupe.defense = defense
+	dupe.magic = magic
+	dupe.speed = speed
 	dupe.key = key
 	return dupe
 

@@ -1,5 +1,7 @@
 class_name Enemy extends TextureButton
 
+signal enemy_dead(enemy: Enemy)
+
 @export var data: BattleActor = null :
 	set(value):
 		data = value.copy()
@@ -7,10 +9,13 @@ class_name Enemy extends TextureButton
 		texture_normal = data.sprite
 		# etc
 
+@onready var enemy_name: Label = $EnemyName
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_flash: Timer = $HitFlash
 
 func _ready() -> void:
+	enemy_name.text = data.name
+	enemy_name.hide()
 	animation_player.play("RESET")
 
 func _process(_delta: float) -> void:
@@ -18,9 +23,11 @@ func _process(_delta: float) -> void:
 		modulate.a = randf()
 
 func _on_focus_entered() -> void:
+	enemy_name.show()
 	animation_player.play("highlight")
 
 func _on_focus_exited() -> void:
+	enemy_name.hide()
 	animation_player.play("RESET")
 
 func _on_data_hp_changed(hp: int, _hp_max: int, value_change: int) -> void:
@@ -33,6 +40,7 @@ func _on_data_hp_changed(hp: int, _hp_max: int, value_change: int) -> void:
 		tween.tween_property(self, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_QUART)
 		await(tween.finished)
 		hide()
+		enemy_dead.emit(self)
 
 func _on_hit_flash_timeout() -> void:
 	modulate.a = 1.0

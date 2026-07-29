@@ -6,10 +6,10 @@ var current_item: Item = null
 var current_item_action: String = ""
 
 @onready var party: Array = Data.party
-@onready var top_menu: Menu = $Control/MarginContainer/HBoxContainer/TopMenu
-@onready var items_modal: Menu = $Control/MarginContainer/HBoxContainer/ItemsModal
+@onready var top_menu: Menu = $Control/MarginContainer/MainMenu/TopMenu
+@onready var items_modal: Menu = $Control/MarginContainer/MainMenu/Modals/ItemsModal
 @onready var player_windows: PlayerWindows = $Control/MarginContainer/PlayerWindows
-@onready var inventory_menu: InventoryMenu = $Control/MarginContainer/HBoxContainer/ItemsModal/InventoryMenu
+@onready var inventory_menu: InventoryMenu = $Control/MarginContainer/MainMenu/Modals/ItemsModal/InventoryMenu
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if not event.pressed:
@@ -35,6 +35,8 @@ func _on_top_menu_button_pressed(button: BaseButton, _index: int) -> void:
 		"Items":
 			inventory_menu.inventory = Data.party[player_windows.active_index].inventory
 			items_modal.button_focus(0)
+		"Equip":
+			pass
 		"Quit":
 			get_tree().quit()
 		_:

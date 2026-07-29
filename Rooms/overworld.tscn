@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8r6kgnxt38ha" path="res://Scripts/room.gd" id="1_c3jhm"]
 [ext_resource type="Texture2D" uid="uid://ddjciwuq4ltnx" path="res://Tilemaps/tiles.png" id="2_iw5h5"]
+[ext_resource type="Script" uid="uid://cy45lh3kex3mu" path="res://Scripts/danger.gd" id="2_s6mpp"]
 [ext_resource type="PackedScene" uid="uid://d2e6p6k05o7ym" path="res://Scenes/actor_player.tscn" id="3_esjqp"]
 [ext_resource type="PackedScene" uid="uid://dpo2c4a7mc2tg" path="res://Scenes/door.tscn" id="3_omn4o"]
 [ext_resource type="Script" uid="uid://cu6fbbifos7to" path="res://Scripts/transition_area.gd" id="4_esjqp"]
@@ -613,6 +614,11 @@ size = Vector2(4, 4)
 tile_set = SubResource("TileSet_s368d")
 script = ExtResource("1_c3jhm")
 metadata/_edit_lock_ = true
+
+[node name="Danger" type="Node" parent="." unique_id=1556861598]
+script = ExtResource("2_s6mpp")
+enemies_weighted = ["elve", 1, "", 1, "", 1, "", 1, "", 1, "", 1, "", 1, "", 1]
+metadata/_custom_type_script = "uid://cy45lh3kex3mu"
 
 [node name="Layers" type="Node2D" parent="." unique_id=1946978897]
 

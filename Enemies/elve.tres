@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BattleActor" format=3 uid="uid://dkwfvivy6p2fp"]
+
+[ext_resource type="Script" uid="uid://b1t438dyijlj7" path="res://Globals/item.gd" id="1_xwtp8"]
+[ext_resource type="Script" uid="uid://dlsnpdk46lub4" path="res://Scripts/battle_actor.gd" id="2_4mykh"]
+[ext_resource type="Texture2D" uid="uid://bvvvcro5rimtx" path="res://Art/enemy.png" id="3_ha1qh"]
+
+[resource]
+script = ExtResource("2_4mykh")
+sprite = ExtResource("3_ha1qh")
+name = "Elve"
+hp_max = 5
+metadata/_custom_type_script = "uid://dlsnpdk46lub4"

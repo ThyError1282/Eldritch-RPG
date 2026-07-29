@@ -9,6 +9,14 @@ size = Vector2(4, 4)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
 radius = 16.0
 
+[sub_resource type="Gradient" id="Gradient_ydudx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_udwty"]
+gradient = SubResource("Gradient_ydudx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=609909867]
 collision_layer = 3
 collision_mask = 3
@@ -23,11 +31,15 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ydudx")
 
 [node name="InteractRange" type="Area2D" parent="." unique_id=593923152]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=139610428]
 shape = SubResource("CircleShape2D_6t5aa")
 debug_color = Color(0.75756997, 0.243074, 0.9406151, 0.41960785)
+
+[node name="Light" type="PointLight2D" parent="." unique_id=865926506]
+texture = SubResource("GradientTexture2D_udwty")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1325280275]

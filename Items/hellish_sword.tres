@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ff2sx")
 name = "Hellish Sword"
+type = 10
 value = 17
 description = "This is your weapon!"
 metadata/_custom_type_script = "uid://b1t438dyijlj7"

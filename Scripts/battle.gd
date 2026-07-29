@@ -1,20 +1,59 @@
 extends Control
 
+enum States {
+	START,
+	RUNNING,
+	VICTORY,
+	GAMEOVER
+}
+
+signal battle_won
+signal battle_lost
+
 const Actions: Dictionary = EventQueue.Actions
 
 var party: Array = Data.party
+var state: States = States.START
 var current_action: EventQueue.Actions = -1
 var current_player_index: int = -1
 var current_item: Item = null
+var enemies_weighted: Array = []
 
 @onready var event_queue: EventQueue = $EventQueue
 @onready var options: Menu = $MarginContainer/Options
 @onready var enemies: Menu = $Enemies
 @onready var player_windows: PlayerWindows = $MarginContainer/PlayerWindows
-@onready var textbox: PanelContainer = $MarginContainer/Textbox
+@onready var textbox: Textbox = $MarginContainer/Textbox
 @onready var inventory_menu: InventoryMenu = $MarginContainer/InventoryMenu
 
+func _roll_enemy_actions() -> void:
+	for enemy: Enemy in enemies.get_buttons():
+		var actor: BattleActor = enemy.data
+		var target: BattleActor = party.pick_random()
+		event_queue.add(Actions.FIGHT, actor, target, null)
+
 func _ready() -> void:
+	var spawn_chance: float = 1.0
+	var enemy_data: BattleActor = Data.enemies.elve
+	for enemy: Enemy in enemies.get_buttons():
+		if randf() > spawn_chance:
+			enemy.hide()
+			continue
+		
+		spawn_chance *= 0.75
+		if enemies_weighted:
+			var enemy_key: String = Arrays.choose_weighted(enemies_weighted)
+			enemy_data = Data.enemies[enemy_key]
+		
+		enemy.data = enemy_data
+		enemy.enemy_dead.connect(_on_enemy_dead)
+	
+	#for enemy: Enemy in enemies.get_buttons():
+		#enemy.enemy_dead.connect(_on_enemy_dead)
+	
+	for player: BattleActor in party:
+		player.hp_changed.connect(_on_player_hp_changed)
+	
 	goto_next_player()
 
 func _input(event: InputEvent) -> void:
@@ -36,11 +75,7 @@ func goto_next_player(dir: int = 1) -> void:
 	inventory_menu.hide()
 	
 	if current_player_index >= party.size():
-		for enemy: Enemy in enemies.get_buttons():
-			var actor: BattleActor = enemy.data
-			var target: BattleActor = party.pick_random() # TODO actual AI based targetting
-			event_queue.add(Actions.FIGHT, actor, target, null) # TODO picking actions
-		
+		_roll_enemy_actions()
 		# TODO sort by speed rolls but added randomization
 		event_queue.shuffle()
 		options.hide()
@@ -49,10 +84,34 @@ func goto_next_player(dir: int = 1) -> void:
 		await(event_queue.run())
 		current_player_index = 0
 	
-	current_action = -1
-	current_item = null
-	player_windows.activate(current_player_index)
-	options.button_focus()
+	match state:
+		States.START:
+			current_action = -1
+			current_item = null
+			player_windows.activate(current_player_index)
+			options.button_focus()
+			return
+		States.VICTORY:
+			textbox.handle_input = true
+			textbox.start("", ["You Win!"])
+			await(get_tree().create_timer(2.0).timeout)
+			textbox.stop()
+			battle_won.emit()
+			queue_free()
+		States.GAMEOVER:
+			textbox.handle_input = true
+			textbox.start("", ["You Lost!"])
+			await(get_tree().create_timer(2.0).timeout)
+			textbox.stop()
+			battle_lost.emit()
+			queue_free()
+		States.RUNNING:
+			textbox.handle_input = true
+			textbox.start("", ["You Ran Away!"])
+			await(get_tree().create_timer(2.0).timeout)
+			textbox.stop()
+			battle_won.emit()
+			queue_free()
 
 func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 	
@@ -64,6 +123,9 @@ func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 			current_action = Actions.ITEM
 			inventory_menu.inventory = party[current_player_index].inventory
 			inventory_menu.button_focus(0)
+		"Flee":
+			state = States.RUNNING
+			goto_next_player()
 		_:
 			pass
 
@@ -79,3 +141,17 @@ func _on_inventory_menu_button_pressed(button: BaseButton, _index: int) -> void:
 func _on_player_windows_button_pressed(button: BaseButton, _index: int) -> void:
 	event_queue.add(current_action, party[current_player_index], button.data, current_item)
 	goto_next_player()
+
+func _on_enemy_dead(_enemy: Enemy) -> void:
+	for enemy: Enemy in enemies.get_buttons():
+		if enemy.data.hp > 0:
+			return
+	
+	state = States.VICTORY
+
+func _on_player_hp_changed(_hp: int, _hp_max: int, _value_change: int) -> void:
+	for player: BattleActor in party:
+		if player.hp > 0:
+			return
+	
+	state = States.GAMEOVER

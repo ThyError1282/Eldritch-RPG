@@ -7,18 +7,20 @@ const TILE_SIZE: Vector2 = Globals.CELL_SIZE
 @export var speed: int = 60
 @export var on_grid: bool = true
 @export var diagonal_allowed: bool = false
+@export var light_on: bool = false
 
 #var target_position: Vector2 = Vector2.ZERO
 
 @onready var data: Dictionary = Data.player_data
 @onready var interact_range: Area2D = $InteractRange
-
+@onready var light: PointLight2D = $Light
 
 func _ready() -> void:
 	super()
 	Globals.player = self
 	#position = data.get("spawn_position", position)
 	moved.emit(position)
+	light.visible = light_on
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -53,4 +55,5 @@ func _process(delta: float) -> void:
 		velocity = movement.normalized() * speed
 		move_and_slide()
 	
-	#moved.emit(position)
+	idle()
+	moved.emit(position)

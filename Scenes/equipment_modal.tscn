@@ -207,3 +207,27 @@ icon = SubResource("AtlasTexture_tv624")
 [node name="ItemButton6" parent="Equipment/Stock/VBoxContainer" unique_id=1069611915 instance=ExtResource("2_ivnbd")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_rsnw0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=260532940]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1806851183]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer" unique_id=714000374]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "ATTACK:"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1302146514]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "0"
+
+[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1936248249]
+layout_mode = 2
+text = "DEFENSE:"
+
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer" unique_id=95576881]
+layout_mode = 2
+text = "0"

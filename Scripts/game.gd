@@ -30,7 +30,7 @@ func goto_new_room(room: Room) -> void:
 	
 	set_process_unhandled_key_input(true)
 
-func goto_battle() -> void:
+func goto_battle(enemies_weighted: Array = []) -> void:
 	get_tree().paused = true
 	set_process_unhandled_key_input(false)
 	await(ScreenEffects.fade(true, 0.5)) # TODO replace with proper effects
@@ -39,6 +39,9 @@ func goto_battle() -> void:
 	get_tree().paused = false
 	
 	var battle: Node = BATTLE.instantiate()
+	battle.enemies_weighted = enemies_weighted
+	battle.battle_won.connect(_on_battle_won)
+	battle.battle_lost.connect(_on_battle_lost)
 	battle_layer.add_child(battle)
 	
 	ScreenEffects.fade(false, 0.5)
@@ -48,3 +51,12 @@ func goto_battle() -> void:
 
 func _on_transition_area_triggered(room_path: String) -> void:
 	goto_new_room(load(room_path).instantiate())
+
+func _on_room_enemy_encountered(enemies_weighted: Array) -> void:
+	goto_battle(enemies_weighted)
+
+func _on_battle_won() -> void:
+	pass
+
+func _on_battle_lost() -> void:
+	get_tree().quit()

@@ -4,6 +4,7 @@ enum Actions {
 	FIGHT,
 	DEFEND,
 	ITEM,
+	FLEE,
 }
 
 const SHORT: float = 0.75

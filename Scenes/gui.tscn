@@ -39,11 +39,11 @@ handle_input = true
 activate_on_start = true
 hide_on_start = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1804189038]
+[node name="MainMenu" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1804189038]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="TopMenu" type="PanelContainer" parent="Control/MarginContainer/HBoxContainer" unique_id=1437603863 node_paths=PackedStringArray("buttons_container")]
+[node name="TopMenu" type="PanelContainer" parent="Control/MarginContainer/MainMenu" unique_id=1437603863 node_paths=PackedStringArray("buttons_container")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -52,36 +52,49 @@ buttons_container = NodePath("VBoxContainer")
 hide_on_start = true
 hide_on_close = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/TopMenu" unique_id=968195619]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/MainMenu/TopMenu" unique_id=968195619]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/MarginContainer/HBoxContainer/TopMenu/VBoxContainer" unique_id=618481895]
+[node name="Button" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=618481895]
 layout_mode = 2
 text = "Items"
 
-[node name="Button2" type="Button" parent="Control/MarginContainer/HBoxContainer/TopMenu/VBoxContainer" unique_id=799486721]
+[node name="Button2" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=799486721]
 layout_mode = 2
+disabled = true
 text = "Magic
 "
 
-[node name="Button3" type="Button" parent="Control/MarginContainer/HBoxContainer/TopMenu/VBoxContainer" unique_id=1091325944]
+[node name="Button3" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=1091325944]
 layout_mode = 2
+disabled = true
 text = "Equip"
 
-[node name="Button4" type="Button" parent="Control/MarginContainer/HBoxContainer/TopMenu/VBoxContainer" unique_id=774425896]
+[node name="Button4" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=774425896]
 layout_mode = 2
+disabled = true
 text = "Status"
 
-[node name="Button5" type="Button" parent="Control/MarginContainer/HBoxContainer/TopMenu/VBoxContainer" unique_id=1732810828]
+[node name="Button5" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=1732810828]
 layout_mode = 2
+disabled = true
 text = "Save"
 
-[node name="Button6" type="Button" parent="Control/MarginContainer/HBoxContainer/TopMenu/VBoxContainer" unique_id=471376567]
+[node name="Button6" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=471376567]
 layout_mode = 2
 text = "Quit"
 
-[node name="ItemsModal" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer" unique_id=1743360135 node_paths=PackedStringArray("buttons_container")]
+[node name="Modals" type="Control" parent="Control/MarginContainer/MainMenu" unique_id=381363273]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemsModal" type="VBoxContainer" parent="Control/MarginContainer/MainMenu/Modals" unique_id=1743360135 node_paths=PackedStringArray("buttons_container")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 9
 script = ExtResource("2_tbye2")
@@ -89,26 +102,26 @@ buttons_container = NodePath("ItemActionsMenu/HBoxContainer")
 hide_on_start = true
 hide_on_close = true
 
-[node name="ItemActionsMenu" type="PanelContainer" parent="Control/MarginContainer/HBoxContainer/ItemsModal" unique_id=1336194877]
+[node name="ItemActionsMenu" type="PanelContainer" parent="Control/MarginContainer/MainMenu/Modals/ItemsModal" unique_id=1336194877]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/ItemsModal/ItemActionsMenu" unique_id=406869187]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/MainMenu/Modals/ItemsModal/ItemActionsMenu" unique_id=406869187]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Button" type="Button" parent="Control/MarginContainer/HBoxContainer/ItemsModal/ItemActionsMenu/HBoxContainer" unique_id=830622361]
+[node name="Button" type="Button" parent="Control/MarginContainer/MainMenu/Modals/ItemsModal/ItemActionsMenu/HBoxContainer" unique_id=830622361]
 layout_mode = 2
 text = "Use"
 
-[node name="Button2" type="Button" parent="Control/MarginContainer/HBoxContainer/ItemsModal/ItemActionsMenu/HBoxContainer" unique_id=1438431136]
+[node name="Button2" type="Button" parent="Control/MarginContainer/MainMenu/Modals/ItemsModal/ItemActionsMenu/HBoxContainer" unique_id=1438431136]
 layout_mode = 2
 text = "Give"
 
-[node name="Button3" type="Button" parent="Control/MarginContainer/HBoxContainer/ItemsModal/ItemActionsMenu/HBoxContainer" unique_id=1876227774]
+[node name="Button3" type="Button" parent="Control/MarginContainer/MainMenu/Modals/ItemsModal/ItemActionsMenu/HBoxContainer" unique_id=1876227774]
 layout_mode = 2
 text = "Discard"
 
-[node name="InventoryMenu" parent="Control/MarginContainer/HBoxContainer/ItemsModal" unique_id=2062174293 instance=ExtResource("5_3w84o")]
+[node name="InventoryMenu" parent="Control/MarginContainer/MainMenu/Modals/ItemsModal" unique_id=2062174293 instance=ExtResource("5_3w84o")]
 process_mode = 3
 custom_minimum_size = Vector2(225, 64)
 layout_mode = 2
@@ -121,7 +134,7 @@ visible = false
 
 [connection signal="button_pressed" from="Control/MarginContainer/PlayerWindows" to="." method="_on_player_windows_button_pressed"]
 [connection signal="player_index_changed" from="Control/MarginContainer/PlayerWindows" to="." method="_on_player_windows_player_index_changed"]
-[connection signal="button_pressed" from="Control/MarginContainer/HBoxContainer/TopMenu" to="." method="_on_top_menu_button_pressed"]
-[connection signal="closed" from="Control/MarginContainer/HBoxContainer/TopMenu" to="." method="_on_top_menu_closed"]
-[connection signal="button_pressed" from="Control/MarginContainer/HBoxContainer/ItemsModal" to="." method="_on_items_modal_button_pressed"]
-[connection signal="button_pressed" from="Control/MarginContainer/HBoxContainer/ItemsModal/InventoryMenu" to="." method="_on_inventory_menu_button_pressed"]
+[connection signal="button_pressed" from="Control/MarginContainer/MainMenu/TopMenu" to="." method="_on_top_menu_button_pressed"]
+[connection signal="closed" from="Control/MarginContainer/MainMenu/TopMenu" to="." method="_on_top_menu_closed"]
+[connection signal="button_pressed" from="Control/MarginContainer/MainMenu/Modals/ItemsModal" to="." method="_on_items_modal_button_pressed"]
+[connection signal="button_pressed" from="Control/MarginContainer/MainMenu/Modals/ItemsModal/InventoryMenu" to="." method="_on_inventory_menu_button_pressed"]
