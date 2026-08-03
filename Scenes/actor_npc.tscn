@@ -9,7 +9,6 @@ size = Vector2(4, 4)
 [node name="NPC" type="CharacterBody2D" unique_id=609909867]
 collision_layer = 5
 script = ExtResource("1_pnyjt")
-is_shopkeeper = null
 dialogue_id = null
 metadata/_edit_group_ = true
 

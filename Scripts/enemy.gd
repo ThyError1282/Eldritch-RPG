@@ -7,6 +7,7 @@ signal enemy_dead(enemy: Enemy)
 		data = value.copy()
 		data.hp_changed.connect(_on_data_hp_changed)
 		texture_normal = data.sprite
+		enemy_name.text = data.name
 		# etc
 
 @onready var enemy_name: Label = $EnemyName
@@ -14,7 +15,6 @@ signal enemy_dead(enemy: Enemy)
 @onready var hit_flash: Timer = $HitFlash
 
 func _ready() -> void:
-	enemy_name.text = data.name
 	enemy_name.hide()
 	animation_player.play("RESET")
 

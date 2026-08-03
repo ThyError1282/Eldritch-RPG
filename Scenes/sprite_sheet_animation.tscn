@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://cu6bcrq6k7u1h" path="res://Art/player.png" id="1_lxtbr"]
 [ext_resource type="Script" uid="uid://b2mqnj1t03ycv" path="res://Scripts/sprite_sheet_animation.gd" id="2_3blbv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvv1p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxtbr"]
 atlas = ExtResource("1_lxtbr")
+region = Rect2(0, 0, 8, 8)
 
 [node name="SpriteSheetAnimation" type="Sprite2D" unique_id=1203396613]
-texture = SubResource("AtlasTexture_jvv1p")
+texture = SubResource("AtlasTexture_lxtbr")
 script = ExtResource("2_3blbv")
 
 [node name="FrameAdvance" type="Timer" parent="." unique_id=2127673854]

@@ -3,7 +3,7 @@ class_name Dialogue extends Node
 const DATA: Array = [
 	#B
 	[
-		"... Welcome, you must p3w bc we r EA!",
+		"... Welcome, you must p3w because we r EA!",
 	],
 ]
 

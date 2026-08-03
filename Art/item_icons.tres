@@ -1,6 +1,6 @@
 [gd_resource type="AtlasTexture" format=3 uid="uid://ct4bqijklpyj0"]
 
-[ext_resource type="Texture2D" uid="uid://cu6bcrq6k7u1h" path="res://Art/player.png" id="1_g1hjh"]
+[ext_resource type="Texture2D" uid="uid://b3loxbi44qive" path="res://Art/items_sheet.png" id="1_g1hjh"]
 
 [resource]
 resource_local_to_scene = true

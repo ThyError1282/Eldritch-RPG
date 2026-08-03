@@ -1,17 +1,7 @@
 [gd_scene format=3 uid="uid://yeedyoklk0gp"]
 
-[ext_resource type="Texture2D" uid="uid://bvvvcro5rimtx" path="res://Art/enemy.png" id="1_1f0kj"]
 [ext_resource type="Script" uid="uid://cscd2poyypmd0" path="res://Scripts/enemy.gd" id="2_afpow"]
-[ext_resource type="Script" uid="uid://b1t438dyijlj7" path="res://Globals/item.gd" id="3_0830c"]
-[ext_resource type="Script" uid="uid://dlsnpdk46lub4" path="res://Scripts/battle_actor.gd" id="3_afpow"]
 [ext_resource type="Texture2D" uid="uid://cejobsig3lma8" path="res://Art/shadow.png" id="4_287tu"]
-
-[sub_resource type="Resource" id="Resource_c5ef4"]
-script = ExtResource("3_afpow")
-sprite = ExtResource("1_1f0kj")
-name = "Elve"
-hp_max = 5
-metadata/_custom_type_script = "uid://dlsnpdk46lub4"
 
 [sub_resource type="Animation" id="Animation_1f0kj"]
 length = 0.001
@@ -51,9 +41,7 @@ _data = {
 }
 
 [node name="Enemy" type="TextureButton" unique_id=1869243428 groups=["enemies"]]
-texture_normal = ExtResource("1_1f0kj")
 script = ExtResource("2_afpow")
-data = SubResource("Resource_c5ef4")
 
 [node name="Shadow" type="TextureRect" parent="." unique_id=1538153885]
 modulate = Color(1, 1, 1, 0.5686275)
@@ -73,6 +61,7 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = -8.0
+offset_bottom = 16.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name"

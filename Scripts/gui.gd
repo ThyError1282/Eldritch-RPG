@@ -10,6 +10,7 @@ var current_item_action: String = ""
 @onready var items_modal: Menu = $Control/MarginContainer/MainMenu/Modals/ItemsModal
 @onready var player_windows: PlayerWindows = $Control/MarginContainer/PlayerWindows
 @onready var inventory_menu: InventoryMenu = $Control/MarginContainer/MainMenu/Modals/ItemsModal/InventoryMenu
+@onready var equipment_modal: Menu = $Control/MarginContainer/MainMenu/Modals/EquipmentModal
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if not event.pressed:
@@ -21,6 +22,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		player_windows.visible = top_menu.visible
 		inventory_menu.visible = false
 		items_modal.visible = false
+		equipment_modal.visible = false
 		get_tree().paused = top_menu.visible
 		if top_menu.visible:
 			#top_menu._close_menus_in_front_of_self()
@@ -36,6 +38,7 @@ func _on_top_menu_button_pressed(button: BaseButton, _index: int) -> void:
 			inventory_menu.inventory = Data.party[player_windows.active_index].inventory
 			items_modal.button_focus(0)
 		"Equip":
+			#equipment_modal.button_focus(0)
 			pass
 		"Quit":
 			get_tree().quit()

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dx3gcknjvyl4g"]
+
+[ext_resource type="Script" uid="uid://b1t438dyijlj7" path="res://Globals/item.gd" id="1_wocon"]
+
+[resource]
+script = ExtResource("1_wocon")
+name = "Eye of Steel"
+type = 6
+value = 1790
+description = "Where did you get this.. from?"
+metadata/_custom_type_script = "uid://b1t438dyijlj7"

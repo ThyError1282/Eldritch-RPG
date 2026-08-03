@@ -21,7 +21,6 @@ func _open(open: bool) -> void:
 func _on_body_entered(_body: Node2D) -> void:
 	_open(true)
 
-
 func _on_body_exited(_body: Node2D) -> void:
 	await(get_tree().create_timer(0.1).timeout)
 	_open(false)

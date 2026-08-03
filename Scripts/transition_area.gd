@@ -49,4 +49,3 @@ func _on_triggered(_body: Node2D) -> void:
 	#Sound.play(Sound.SOUNDS.door_close, 0.2)
 	get_tree().paused = false # TODO delay with await
 	get_tree().change_scene_to_file(room_path)
-	

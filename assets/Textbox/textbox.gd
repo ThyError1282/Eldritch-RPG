@@ -21,10 +21,12 @@ var current_position: Vector2 = Vector2.ZERO
 func _enter_tree() -> void:
 	Globals.textbox = self
 
+func _process(_delta: float) -> void:
+	Globals.textbox = self
+
 func _ready() -> void:
 	#if Globals.player:
 		#Globals.player.moved.connect(_on_player_moved)
-		
 	stop()
 	self_modulate.a = 1.0 if show_window else 0.0
 

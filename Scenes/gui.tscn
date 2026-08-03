@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://4ooc11r1m7ty" path="res://Scripts/gui.gd" id="1_gic31"]
 [ext_resource type="Script" uid="uid://640wg2efcbqp" path="res://Scripts/menu.gd" id="2_tbye2"]
 [ext_resource type="PackedScene" uid="uid://duoyklvanun7a" path="res://assets/Textbox/textbox.tscn" id="3_m6o0h"]
-[ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="3_rpies"]
 [ext_resource type="PackedScene" uid="uid://ciybf48kkst0x" path="res://Scenes/player_windows.tscn" id="4_8kag3"]
 [ext_resource type="PackedScene" uid="uid://ow08glqkabd" path="res://Scenes/inventory_menu.tscn" id="5_3w84o"]
+[ext_resource type="PackedScene" uid="uid://dnx6ie86eb88e" path="res://Scenes/equipment_modal.tscn" id="6_xnb2j"]
 
 [node name="GUI" type="CanvasLayer" unique_id=313838931]
 process_mode = 3
@@ -67,7 +67,6 @@ text = "Magic
 
 [node name="Button3" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=1091325944]
 layout_mode = 2
-disabled = true
 text = "Equip"
 
 [node name="Button4" type="Button" parent="Control/MarginContainer/MainMenu/TopMenu/VBoxContainer" unique_id=774425896]
@@ -129,8 +128,12 @@ size_flags_horizontal = 1
 hide_on_start = true
 hide_on_close = true
 
-[node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("3_rpies")]
-visible = false
+[node name="EquipmentModal" parent="Control/MarginContainer/MainMenu/Modals" unique_id=616247350 instance=ExtResource("6_xnb2j")]
+layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_bottom = 118.0
+grow_vertical = 1
 
 [connection signal="button_pressed" from="Control/MarginContainer/PlayerWindows" to="." method="_on_player_windows_button_pressed"]
 [connection signal="player_index_changed" from="Control/MarginContainer/PlayerWindows" to="." method="_on_player_windows_player_index_changed"]

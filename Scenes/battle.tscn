@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://yeedyoklk0gp" path="res://Scenes/enemy.tscn" id="5_qeyqd"]
 [ext_resource type="PackedScene" uid="uid://duoyklvanun7a" path="res://assets/Textbox/textbox.tscn" id="6_f6xt6"]
 [ext_resource type="PackedScene" uid="uid://ow08glqkabd" path="res://Scenes/inventory_menu.tscn" id="8_k7mbx"]
-[ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="10_k7mbx"]
+[ext_resource type="AudioStream" uid="uid://2gvo400l5vr1" path="res://Music/BossMain.wav" id="10_k7mbx"]
+[ext_resource type="AudioStream" uid="uid://bbipdjyhca6xl" path="res://Music/BossIntro.wav" id="10_rssjf"]
 [ext_resource type="PackedScene" uid="uid://j12mdbd256sy" path="res://Scenes/screen_shake_2d.tscn" id="11_upb72"]
+[ext_resource type="AudioStream" uid="uid://diksumxuqqwat" path="res://Music/Win Jingle.wav" id="12_heh15"]
 
 [node name="Battle" type="Control" unique_id=1882941068]
 process_mode = 3
@@ -155,14 +157,24 @@ handle_input = false
 [node name="InventoryMenu" parent="MarginContainer" unique_id=2062174293 instance=ExtResource("8_k7mbx")]
 layout_mode = 2
 
-[node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("10_k7mbx")]
-visible = false
-position = Vector2(0, 5)
-base_offset = Vector2(0, 0)
-
 [node name="ScreenShake2D" parent="." unique_id=987204232 instance=ExtResource("11_upb72")]
 process_mode = 3
 anchor_mode = 0
+
+[node name="Start" type="AudioStreamPlayer" parent="." unique_id=1321563115]
+process_mode = 3
+stream = ExtResource("10_rssjf")
+bus = &"Battle"
+
+[node name="StartMain" type="AudioStreamPlayer" parent="." unique_id=909895141]
+process_mode = 3
+stream = ExtResource("10_k7mbx")
+bus = &"Battle"
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=1454573876]
+process_mode = 3
+stream = ExtResource("12_heh15")
+bus = &"Battle"
 
 [connection signal="button_pressed" from="Enemies" to="." method="_on_enemies_button_pressed"]
 [connection signal="button_pressed" from="MarginContainer/Options" to="." method="_on_options_button_pressed"]

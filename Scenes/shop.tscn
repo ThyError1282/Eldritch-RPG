@@ -2,10 +2,10 @@
 
 [ext_resource type="Gradient" uid="uid://bn4ogorf6wu5d" path="res://Text/gradient.tres" id="1_a0mxf"]
 [ext_resource type="Script" uid="uid://bcwsr0shfn23c" path="res://Scripts/shop.gd" id="1_fdj0q"]
-[ext_resource type="PackedScene" uid="uid://bvv1nbodycp04" path="res://Scenes/menu_cursor.tscn" id="2_2shtd"]
 [ext_resource type="Script" uid="uid://640wg2efcbqp" path="res://Scripts/menu.gd" id="2_io27d"]
 [ext_resource type="Script" uid="uid://hmds7fmla2vs" path="res://Scripts/inventory_menu.gd" id="3_3ps1r"]
 [ext_resource type="PackedScene" uid="uid://c4714w2xo6ftr" path="res://Scenes/item_button.tscn" id="4_ymrm4"]
+[ext_resource type="Texture2D" uid="uid://cu6bcrq6k7u1h" path="res://Art/player.png" id="5_5xp22"]
 [ext_resource type="StyleBox" uid="uid://whihy1eo8oul" path="res://Text/panel_theme.tres" id="5_tyrku"]
 [ext_resource type="Script" uid="uid://db2xwrgb33h01" path="res://Scripts/money_label.gd" id="5_ymrm4"]
 [ext_resource type="Script" uid="uid://dmjs5wsnn75un" path="res://Scripts/shop_players_window.gd" id="8_ow1eo"]
@@ -15,6 +15,56 @@
 gradient = ExtResource("1_a0mxf")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow1eo"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6pkm"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sjcd"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cyt5"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vsm1"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3568l"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjtuy"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuuv1"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl1pv"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m13ki"]
+resource_local_to_scene = true
+atlas = ExtResource("5_5xp22")
+region = Rect2(0, 0, 8, 8)
 
 [node name="Shop" type="CanvasLayer" unique_id=1810253204]
 process_mode = 3
@@ -103,33 +153,43 @@ theme_override_constants/separation = 0
 
 [node name="ItemButton" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=1727015153 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_ow1eo")
 
 [node name="ItemButton2" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=2080397666 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_k6pkm")
 
 [node name="ItemButton3" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=530286100 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_1sjcd")
 
 [node name="ItemButton4" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=1312644356 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_1cyt5")
 
 [node name="ItemButton5" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=230814762 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_0vsm1")
 
 [node name="ItemButton6" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=846777672 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_3568l")
 
 [node name="ItemButton7" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=1635809198 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_mjtuy")
 
 [node name="ItemButton8" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=595155818 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_cuuv1")
 
 [node name="ItemButton9" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=849066508 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_yl1pv")
 
 [node name="ItemButton10" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer/Items" unique_id=2041843956 instance=ExtResource("4_ymrm4")]
 layout_mode = 2
+icon = SubResource("AtlasTexture_m13ki")
 
 [node name="Costs" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory/ScrollContainer/HBoxContainer" unique_id=1329983780]
 layout_mode = 2
@@ -317,9 +377,6 @@ text = "Sell"
 [node name="Exit" type="Button" parent="Control/TopMenu/VBoxContainer" unique_id=299456009]
 layout_mode = 2
 text = "Exit"
-
-[node name="MenuCursor" parent="." unique_id=624995246 instance=ExtResource("2_2shtd")]
-visible = false
 
 [connection signal="button_focused" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory" to="." method="_on_inventory_button_focused"]
 [connection signal="button_pressed" from="Control/MarginContainer/VBoxContainer/Main/HBoxContainer/Inventory" to="." method="_on_inventory_button_pressed"]

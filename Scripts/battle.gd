@@ -25,6 +25,9 @@ var enemies_weighted: Array = []
 @onready var player_windows: PlayerWindows = $MarginContainer/PlayerWindows
 @onready var textbox: Textbox = $MarginContainer/Textbox
 @onready var inventory_menu: InventoryMenu = $MarginContainer/InventoryMenu
+@onready var start: AudioStreamPlayer = $Start
+@onready var start_main: AudioStreamPlayer = $StartMain
+@onready var win: AudioStreamPlayer = $Win
 
 func _roll_enemy_actions() -> void:
 	for enemy: Enemy in enemies.get_buttons():
@@ -53,6 +56,11 @@ func _ready() -> void:
 	
 	for player: BattleActor in party:
 		player.hp_changed.connect(_on_player_hp_changed)
+	
+	start.play(0.0)
+	await(start.finished)
+	start.stop()
+	start_main.play(0.0)
 	
 	goto_next_player()
 
@@ -94,7 +102,9 @@ func goto_next_player(dir: int = 1) -> void:
 		States.VICTORY:
 			textbox.handle_input = true
 			textbox.start("", ["You Win!"])
-			await(get_tree().create_timer(2.0).timeout)
+			start_main.stop()
+			win.play(0.0)
+			await(win.finished)
 			textbox.stop()
 			battle_won.emit()
 			queue_free()

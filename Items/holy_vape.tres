@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_7c63s")
 name = "Holy Vape"
+type = 7
 quantity_max = 5
 value = 25
 description = "Its a vape!"

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://banbi6hxbsxu6"]
 
-[ext_resource type="Texture2D" path="res://Utility/MouseCursor/mouse_cursor_minimal.png" id="1_x4feu"]
-[ext_resource type="Script" path="res://Utility/MouseCursor/mouse_cursor.gd" id="2_i3ba7"]
+[ext_resource type="Texture2D" uid="uid://c2cc18tun8px0" path="res://assets/MouseCursor/mouse_cursor_minimal.png" id="1_x4feu"]
+[ext_resource type="Script" uid="uid://dtuiwofsdwiek" path="res://assets/MouseCursor/mouse_cursor.gd" id="2_i3ba7"]
 
-[node name="MouseCursor" type="Sprite2D"]
+[node name="MouseCursor" type="Sprite2D" unique_id=1403929849]
 texture = ExtResource("1_x4feu")
 centered = false
 script = ExtResource("2_i3ba7")
