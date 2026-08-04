@@ -13,5 +13,7 @@ The whole premise behind this is that it is very modular, you can tinker with ev
 Let me know on my itch.io page about any wanted features and if I have some spare time I will add them to the game and update.
 Really hoping to see support on this becoming an actual game project!
 
+If you want to run it in godot, download the whole project as a zip and open it in godot as a zip; otherwise the game is on itch.io.
+
 ERROR1282
 Itch.io: https://error1282.itch.io/
