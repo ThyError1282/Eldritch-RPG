@@ -20,8 +20,10 @@ Really hoping to see support on this becoming an actual game project!
 # How to Run
 
 If you want to run it in godot, download the whole project as a zip and open it in godot as a zip; otherwise the game is on itch.io.
+You can find the Itch.io game at https://error1282.itch.io/elderrich-rpg
 
 # Links
 error1282 on discord
 errorscryption on slack
 Itch.io: https://error1282.itch.io/
+Discord: https://discord.gg/JGyECD2SE9
