@@ -26,7 +26,11 @@ Really hoping to see support on this becoming an actual game project!
 
 # How to Run
 
-If you want to run it in godot, download the whole project as a zip and open it in godot as a zip; otherwise the game is on itch.io.
+If you want to run it in godot, download the whole project as a zip and import it into godot as a zip; otherwise the game is on itch.io.
+
+Godot: Open godot stable, import project into godot as a zip and add globals as shown down below.
+
+<img width="1016" height="131" alt="image" src="https://github.com/user-attachments/assets/dc589211-8239-4dbe-b7fe-bf688ac08ef1" />
 
 You can find the Itch.io game at https://error1282.itch.io/elderrich-rpg
 
